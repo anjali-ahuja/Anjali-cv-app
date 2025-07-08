@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import ForegroundDev from "../components/ForegroundDev";
-import ForegroundMoon from "../components/ForegroundMoon";
 import ScrollHint from "../components/ScrollHint";
 
 const geistSans = Geist({
@@ -31,8 +29,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
         {/* Sticky SVGs */}
-        <ForegroundDev />
-        <ForegroundMoon />
         <ScrollHint />
         {/* Responsive layout: horizontal scroll on desktop, vertical on mobile */}
         <main

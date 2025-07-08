@@ -42,14 +42,15 @@ const ScrollHint = () => {
               transform: `translateX(${HORIZONTAL_WIGGLE[wiggleStep]}px)`,
               transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
               marginRight: '0.5rem',
+              color: 'var(--lime-green)',
             }}
-            className="text-gray-300 text-lg"
+            className="text-lg"
             aria-hidden
           >
             ←
           </span>
         )}
-        <span className="text-gray-400 text-xs font-light mx-2">Scroll</span>
+        <span className="text-xs font-light mx-2" style={{ color: 'var(--lime-green)' }}>Scroll</span>
         {canScrollRight && (
           <span
             style={{
@@ -57,8 +58,9 @@ const ScrollHint = () => {
               transform: `translateX(${HORIZONTAL_WIGGLE.map((v) => -v)[wiggleStep]}px)`,
               transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
               marginLeft: '0.5rem',
+              color: 'var(--lime-green)',
             }}
-            className="text-gray-300 text-lg"
+            className="text-lg"
             aria-hidden
           >
             →
