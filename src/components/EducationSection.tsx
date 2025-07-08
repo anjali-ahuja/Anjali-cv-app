@@ -12,7 +12,7 @@ const EducationSection = () => {
         <ul className="space-y-6 text-lg md:text-xl">
           <li>
             <span className="font-bold">Bachelor of Computer Science</span> — University of Melbourne<br/>
-            <span className="text-base">2016 – 2019</span>
+            <span className="text-base">2018 – 2020</span>
           </li>
         </ul>
       </div>
