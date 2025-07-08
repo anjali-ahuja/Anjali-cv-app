@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ForegroundDev from "../components/ForegroundDev";
+import ForegroundMoon from "../components/ForegroundMoon";
+import ScrollHint from "../components/ScrollHint";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +28,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
-        {children}
+        {/* Sticky SVGs */}
+        <ForegroundDev />
+        <ForegroundMoon />
+        <ScrollHint />
+        {/* Responsive layout: horizontal scroll on desktop, vertical on mobile */}
+        <main
+          className="flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:h-screen md:w-screen md:[&>*]:min-w-full md:[&>*]:min-h-screen md:no-scrollbar"
+        >
+          {children}
+        </main>
       </body>
     </html>
   );
