@@ -1,7 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --primary-purple: #833E8D;
+  --accent-orange: #E25800;
+  --soft-peach: #F0B285;
+  --lime-green: #D2E177;
+  --pink: #FB83AD;
+  --coral: #F08592;
+  --background: #fff;
   --foreground: #171717;
 }
 
@@ -10,6 +16,12 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --primary-purple: var(--primary-purple);
+  --accent-orange: var(--accent-orange);
+  --soft-peach: var(--soft-peach);
+  --lime-green: var(--lime-green);
+  --pink: var(--pink);
+  --coral: var(--coral);
 }
 
 @media (prefers-color-scheme: dark) {
