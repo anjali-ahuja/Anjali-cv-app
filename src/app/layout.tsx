@@ -21,13 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white overflow-hidden`}
       >
         {/* Sticky SVGs */}
         <ScrollHint />
         {/* Responsive layout: horizontal scroll on desktop, vertical on mobile */}
         <main
-          className="flex flex-col md:flex-row md:overflow-x-auto md:scroll-smooth md:h-screen md:w-screen md:[&>*]:min-w-full md:[&>*]:min-h-screen md:no-scrollbar"
+          className="flex flex-col md:flex-row md:overflow-x-auto md:overflow-y-hidden md:scroll-smooth md:h-screen md:w-screen md:[&>*]:min-w-full md:[&>*]:h-screen md:[&>*]:flex-shrink-0 md:no-scrollbar"
         >
           {children}
         </main>
