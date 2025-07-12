@@ -23,7 +23,7 @@ const Hero = () => {
 
   return (
     <section
-      className="flex items-center justify-center min-h-screen w-full px-4"
+      className="flex items-center justify-center min-h-screen w-full px-4 py-8"
       style={{ background: "var(--primary-purple)", color: "var(--soft-peach)" }}
     >
       <div className="max-w-2xl text-center">

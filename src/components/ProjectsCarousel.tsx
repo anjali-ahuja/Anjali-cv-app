@@ -4,7 +4,7 @@ import React from "react";
 const ProjectsCarousel = () => {
   return (
     <section
-      className="flex items-center justify-center min-h-screen w-full"
+      className="flex items-center justify-center min-h-screen w-full px-4 py-8"
       style={{ background: "var(--accent-orange)", color: "var(--lime-green)" }}
     >
       <div className="text-center">

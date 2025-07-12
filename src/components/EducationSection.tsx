@@ -23,7 +23,7 @@ const EducationSection = () => {
 
   return (
     <section
-      className="flex items-center justify-center h-screen w-full"
+      className="flex items-center justify-center min-h-screen w-full px-4 py-8"
       style={{ background: "var(--soft-peach)", color: "var(--primary-purple)" }}
     >
       <div className="text-center max-w-6xl px-8 py-6 h-full flex flex-col justify-center">
