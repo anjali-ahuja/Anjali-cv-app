@@ -23,10 +23,10 @@ const Hero = () => {
 
   return (
     <section
-      className="flex items-center justify-center min-h-screen w-full px-6 md:px-4 py-8"
+      className="flex flex-col md:flex-row items-center justify-center min-h-screen w-full px-6 md:px-16 lg:px-32 py-8 md:gap-6 lg:gap-10"
       style={{ background: "var(--primary-purple)", color: "var(--soft-peach)" }}
     >
-      <div className="max-w-2xl text-center">
+      <div className="w-full md:w-1/2 flex flex-col items-center text-center max-w-2xl">
         <h1 className="text-4xl md:text-5xl mb-6 leading-tight">
           <span style={{ minHeight: 48, display: "inline-block", letterSpacing: "0.02em" }}>
             {displayedText}
@@ -66,6 +66,14 @@ const Hero = () => {
             Outside of code, I love learning—whether it's a new tech concept, a good book, or how to spot better moves on a chessboard.
           </p>
         </motion.div>
+      </div>
+      <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
+        <img
+          src="/hero-photo.jpg"
+          alt="Anjali smiling with headphones on"
+          className="rounded-lg shadow-lg object-cover max-w-xs md:max-w-sm lg:max-w-md w-full h-64 md:h-96"
+          style={{ background: "rgba(255,255,255,0.15)" }}
+        />
       </div>
     </section>
   );
