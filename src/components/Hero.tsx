@@ -28,7 +28,7 @@ const Hero = () => {
     >
       <div className="w-full md:w-1/2 flex flex-col items-center text-center max-w-2xl">
         <h1 className="text-4xl md:text-5xl mb-6 leading-tight">
-          <span style={{ minHeight: 48, display: "inline-block", letterSpacing: "0.02em" }}>
+          <span style={{ minHeight: 48, display: "inline-block", letterSpacing: "0.02em", color: "var(--lime-green)" }}>
             {displayedText}
             <span className="animate-pulse">|</span>
           </span>
@@ -37,6 +37,7 @@ const Hero = () => {
             animate={controls}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="block mt-2"
+            style={{ color: "var(--lime-green)" }}
           >
             a software engineer based in Australia.
           </motion.span>
@@ -56,11 +57,12 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <p>
-            I started my career in tech consulting at EY, working across Digital & Emerging Tech and Data & Analytics, where I helped deliver impactful solutions for clients.
-            I then joined Amazon as a Software Development Engineer, focusing on large-scale, customer-facing systems. I bring curiosity, clarity, and a strong customer mindset to every project.
-          </p>
-          <p>
-            I'm excited to be joining Canva soon, where I'll continue building thoughtful, user-first products.
+          I'm a <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Software Engineer</span> at <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Canva</span>, 
+          working on the internal data platform to improve data warehouse experiences for teams across the company. 
+          Before this, I was a <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Software Development Engineer</span> at <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Amazon</span>, 
+          building large-scale, customer-facing systems. I bring curiosity, clarity, and a strong customer mindset to every project. 
+          My tech journey began as a <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Consultant</span> at <span className="font-semibold" style={{ color: "var(--lime-green)" }}>EY</span>, 
+          where I worked across Digital & Emerging Tech and Data & Analytics to deliver meaningful solutions for clients.
           </p>
           <p>
             Outside of code, I love learning—whether it's a new tech concept, a good book, or how to spot better moves on a chessboard.

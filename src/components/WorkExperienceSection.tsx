@@ -43,15 +43,29 @@ const WorkExperienceSection = () => {
 
         {/* Two Columns for Work Experience */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          {/* Current Company */}
-          <div className="text-left">
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm h-full">
+          {/* Left Column: Current and Recent Companies */}
+          <div className="text-left space-y-4">
+            {/* Canva - Current Company */}
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm">
+              <div className="flex justify-between items-start mb-3">
+                <div>
+                  <h4 className="text-lg font-semibold">Canva</h4>
+                  <p className="text-base text-gray-700">Software Engineer</p>
+                </div>
+                <span className="text-sm text-gray-600">July 2025 – Present</span>
+              </div>
+              <ul className="space-y-1 text-xs">
+                <li>• Ramping up to improve data warehouse experiences for teams across the company 🏗️</li>
+              </ul>
+            </div>
+            {/* Amazon - Previous Company */}
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm">
               <div className="flex justify-between items-start mb-3">
                 <div>
                   <h4 className="text-lg font-semibold">Amazon</h4>
                   <p className="text-base text-gray-700">Software Development Engineer</p>
                 </div>
-                <span className="text-sm text-gray-600">August 2022 – Present</span>
+                <span className="text-sm text-gray-600">August 2022 – July 2025</span>
               </div>
               <ul className="space-y-1 text-xs">
                 <li>• Contributed to the design and development of microservices within the Buy With Prime ecosystem</li>
@@ -64,7 +78,7 @@ const WorkExperienceSection = () => {
             </div>
           </div>
 
-          {/* Previous Company 1 */}
+          {/* Right Column: EY */}
           <div className="text-left">
             <div className="bg-white/50 rounded-lg p-4 shadow-sm h-full">
               <div className="flex justify-between items-start mb-3">
