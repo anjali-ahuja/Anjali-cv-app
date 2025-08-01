@@ -9,6 +9,7 @@
   --coral: #F08592;
   --background: #fff;
   --foreground: #171717;
+  --white: #fff;
 }
 
 @theme inline {
@@ -22,6 +23,7 @@
   --lime-green: var(--lime-green);
   --pink: var(--pink);
   --coral: var(--coral);
+  --white: var(--white);
 }
 
 @media (prefers-color-scheme: dark) {
