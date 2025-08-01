@@ -42,9 +42,9 @@ const WorkExperienceSection = () => {
         </div>
 
         {/* Two Columns for Work Experience */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-4 lg:gap-y-0 gap-x-0 lg:gap-x-6 mb-8">
           {/* Left Column: Current and Recent Companies */}
-          <div className="text-left space-y-4">
+          <div className="text-left flex flex-col gap-4 lg:gap-6">
             {/* Canva - Current Company */}
             <div className="bg-white/50 rounded-lg p-4 shadow-sm">
               <div className="flex justify-between items-start mb-3">
