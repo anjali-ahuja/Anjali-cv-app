@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 
 const WorkExperienceSection = () => {
   // Typewriter effect state for header
@@ -37,7 +37,7 @@ const WorkExperienceSection = () => {
         {/* Intro Paragraph - Top Row */}
         <div className="mb-8">
           <p className="text-base md:text-lg leading-relaxed max-w-4xl mx-auto">
-          I’ve had the privilege of working with amazing teams and tackling complex challenges across e-commerce and fintech. Here's a glimpse into my professional journey.
+            I&apos;ve had the privilege of working with amazing teams and tackling complex challenges across e-commerce and fintech. Here&apos;s a glimpse into my professional journey.
           </p>
         </div>
 
@@ -119,9 +119,9 @@ const WorkExperienceSection = () => {
           <h3 className="text-lg font-semibold mb-4">🛠️ Key Skills & Technologies</h3>
           <div className="bg-white/50 rounded-lg p-4 shadow-sm">
             <p className="text-sm leading-relaxed mb-3">
-            I’m a full-stack software engineer with a focus on building clean, scalable systems — from front-end interfaces to backend services and data platforms. I work fluently with React, TypeScript, Python, Java, Kotlin, and AWS, and have contributed to high-impact projects in both product and consulting environments.
+              I&apos;m a full-stack software engineer with a focus on building clean, scalable systems — from front-end interfaces to backend services and data platforms. I work fluently with React, TypeScript, Python, Java, Kotlin, and AWS, and have contributed to high-impact projects in both product and consulting environments.
 
-I’m drawn to elegant abstractions, clear architecture, and tools that make life better for both users and developers. I bring the same care to collaboration — whether I’m leading planning sessions, pairing with engineers, or aligning with stakeholders to bring a vision to life.
+              I&apos;m drawn to elegant abstractions, clear architecture, and tools that make life better for both users and developers. I bring the same care to collaboration — whether I&apos;m leading planning sessions, pairing with engineers, or aligning with stakeholders to bring a vision to life.
             </p>
             <div className="pt-3 border-t border-gray-200">
               <p className="text-xs">🔗 View my full experience on <a href="https://www.linkedin.com/in/anjali-manoj-ahuja/" target="_blank" className="underline hover:text-purple-600 transition-colors">LinkedIn</a></p>

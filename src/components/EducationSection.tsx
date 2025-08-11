@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { useAnimation } from "framer-motion";
 
 const EducationSection = () => {
   // Typewriter effect state for header
@@ -37,7 +37,7 @@ const EducationSection = () => {
         {/* Intro Paragraph - Top Row */}
         <div className="mb-8">
           <p className="text-base md:text-lg leading-relaxed max-w-4xl mx-auto">
-            I've always loved learning — whether it's through formal study, technical certifications, or self-directed exploration. Here's a snapshot of my educational journey so far.
+            I&apos;ve always loved learning — whether it&apos;s through formal study, technical certifications, or self-directed exploration. Here&apos;s a snapshot of my educational journey so far.
           </p>
         </div>
 
@@ -104,8 +104,8 @@ const EducationSection = () => {
           <h3 className="text-lg font-semibold mb-4">📚 Ongoing Learning</h3>
           <div className="bg-white/50 rounded-lg p-4 shadow-sm">
             <p className="text-sm leading-relaxed">
-            I'm currently deepening my skills in system design, machine learning, and product analytics — and outside of work, I'm also working on sharpening my chess game and strategic thinking.
-            If you're exploring similar topics, I'd love to connect and learn together — feel free to reach out!
+              I&apos;m currently deepening my skills in system design, machine learning, and product analytics — and outside of work, I&apos;m also working on sharpening my chess game and strategic thinking.
+              If you&apos;re exploring similar topics, I&apos;d love to connect and learn together — feel free to reach out!
             </p>
           </div>
         </div>

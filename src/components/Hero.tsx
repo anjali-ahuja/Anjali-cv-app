@@ -57,15 +57,15 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <p>
-          I'm a <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Software Engineer</span> at <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Canva</span>, 
-          working on the internal data platform to improve data warehouse experiences for teams across the company. 
-          Before this, I was a <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Software Development Engineer</span> at <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Amazon</span>, 
-          building large-scale, customer-facing systems. I bring curiosity, clarity, and a strong customer mindset to every project. 
-          My tech journey began as a <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Consultant</span> at <span className="font-semibold" style={{ color: "var(--lime-green)" }}>EY</span>, 
-          where I worked across Digital & Emerging Tech and Data & Analytics to deliver meaningful solutions for clients.
+            I&apos;m a <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Software Engineer</span> at <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Canva</span>, 
+            working on the internal data platform to improve data warehouse experiences for teams across the company. 
+            Before this, I was a <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Software Development Engineer</span> at <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Amazon</span>, 
+            building large-scale, customer-facing systems. I bring curiosity, clarity, and a strong customer mindset to every project. 
+            My tech journey began as a <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Consultant</span> at <span className="font-semibold" style={{ color: "var(--lime-green)" }}>EY</span>, 
+            where I worked across Digital & Emerging Tech and Data & Analytics to deliver meaningful solutions for clients.
           </p>
           <p>
-            Outside of code, I love learning—whether it's a new tech concept, a good book, or how to spot better moves on a chessboard.
+            Outside of code, I love learning—whether it&apos;s a new tech concept, a good book, or how to spot better moves on a chessboard.
           </p>
         </motion.div>
       </div>

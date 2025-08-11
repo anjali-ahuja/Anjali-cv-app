@@ -2,7 +2,7 @@
 
 :root {
   --primary-purple: #833E8D;
-  --accent-orange: #E25800;
+  --accent-aqua: #9AE3D6;
   --soft-peach: #F0B285;
   --lime-green: #D2E177;
   --pink: #FB83AD;
@@ -18,7 +18,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --primary-purple: var(--primary-purple);
-  --accent-orange: var(--accent-orange);
+  --accent-aqua: var(--accent-aqua);
   --soft-peach: var(--soft-peach);
   --lime-green: var(--lime-green);
   --pink: var(--pink);
