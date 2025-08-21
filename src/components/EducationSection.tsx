@@ -1,26 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { useAnimation } from "framer-motion";
+import React from "react";
+import SectionTitle from "./SectionTitle";
 
 const EducationSection = () => {
-  // Typewriter effect state for header
-  const headerText = "Education";
-  const [displayedHeader, setDisplayedHeader] = useState("");
-  const controls = useAnimation();
-
-  useEffect(() => {
-    let current = 0;
-    const interval = setInterval(() => {
-      setDisplayedHeader(headerText.slice(0, current + 1));
-      current++;
-      if (current === headerText.length) {
-        clearInterval(interval);
-        controls.start({ opacity: 1, y: 0 });
-      }
-    }, 100); // typing speed
-    return () => clearInterval(interval);
-  }, [headerText, controls]);
-
   return (
     <section
       className="flex items-center justify-center min-h-screen w-full px-6 md:px-4 py-8"
@@ -31,12 +13,11 @@ const EducationSection = () => {
       } as React.CSSProperties}
     >
       <div className="text-center max-w-6xl px-8 py-6 h-full flex flex-col justify-center">
-        <h2 className="text-2xl font-semibold mb-6">
-          <span style={{ minHeight: "2rem", display: "inline-block" }}>
-            {displayedHeader}
-            <span className="animate-pulse">|</span>
-          </span>
-        </h2>
+        <SectionTitle 
+          text="Education" 
+          as="h2" 
+          className="text-2xl font-semibold mb-6" 
+        />
         
         {/* Intro Paragraph - Top Row */}
         <div className="mb-8">

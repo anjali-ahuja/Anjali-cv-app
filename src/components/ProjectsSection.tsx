@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import SectionTitle from "./SectionTitle";
 
 const ProjectsSection = () => {
   return (
@@ -12,7 +13,11 @@ const ProjectsSection = () => {
       } as React.CSSProperties}
     >
       <div className="text-center max-w-6xl px-8 py-6 h-full flex flex-col justify-center w-full">
-        <h2 className="text-2xl font-semibold mb-6">Projects</h2>
+        <SectionTitle 
+          text="Projects" 
+          as="h2" 
+          className="text-2xl font-semibold mb-6" 
+        />
         <div className="mb-8 space-y-4">
           <p className="text-base md:text-lg leading-relaxed">
             Most of my engineering journey so far has been shaped by my work at <span className="font-semibold">Amazon</span> and <span className="font-semibold">Canva</span>, so I haven&apos;t always had the time to build many side projects. I&apos;m looking to change that. This space will grow with more experiments, creative builds, and collaborations.

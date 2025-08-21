@@ -1,14 +1,19 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const Hero = () => {
   // Typewriter effect state
-  const headline = "Hi, I'm Anjali —";
+  const headline = "Hi, I'm Anjali — a software engineer based in Australia.";
   const [displayedText, setDisplayedText] = useState("");
   const controls = useAnimation();
 
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const isInView = useInView(sectionRef, { once: true, margin: "-20% 0px -20% 0px" });
+
   useEffect(() => {
+    if (!isInView) return;
+
     let current = 0;
     const interval = setInterval(() => {
       setDisplayedText(headline.slice(0, current + 1));
@@ -18,11 +23,13 @@ const Hero = () => {
         controls.start({ opacity: 1, y: 0 });
       }
     }, 84); // typing speed (slowed by 20%)
+
     return () => clearInterval(interval);
-  }, [headline, controls]);
+  }, [headline, controls, isInView]);
 
   return (
     <section
+      ref={sectionRef}
       className="flex flex-col md:flex-row items-center justify-center min-h-screen w-full px-6 md:px-16 lg:px-32 py-8 md:gap-6 lg:gap-10"
       style={{
         background: "var(--primary-purple)",
@@ -36,21 +43,12 @@ const Hero = () => {
             {displayedText}
             <span className="animate-pulse">|</span>
           </span>
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={controls}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="block mt-2"
-            style={{ color: "var(--lime-green)" }}
-          >
-            a software engineer based in Australia.
-          </motion.span>
         </h1>
         <motion.p
           className="text-lg md:text-xl mb-6 opacity-90"
           initial={{ opacity: 0, y: 20 }}
           animate={controls}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
         >
           I care about writing clean, reliable code and building systems that genuinely help people.
         </motion.p>
@@ -58,7 +56,7 @@ const Hero = () => {
           className="text-base md:text-lg space-y-4 mb-8 opacity-90"
           initial={{ opacity: 0, y: 20 }}
           animate={controls}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
           <p>
             I&apos;m a <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Software Engineer</span> at <span className="font-semibold" style={{ color: "var(--lime-green)" }}>Canva</span>, 
