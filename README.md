@@ -61,3 +61,4 @@ This app is configured to deploy automatically to GitHub Pages.
 - Tailwind CSS
 - Framer Motion
 # Force new deployment
+# Force image path update
