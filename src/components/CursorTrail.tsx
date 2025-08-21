@@ -29,14 +29,13 @@ const CursorTrail = () => {
     let animationFrameId: number;
     let lastTime = 0;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      // Add new sparkle every few frames
+    const addSparkle = (x: number, y: number) => {
       const currentTime = Date.now();
       if (currentTime - lastTime > 48) { // Add sparkle every 48ms (50% slower - 24*2=48)
         const newSparkle: Sparkle = {
           id: currentTime + Math.random(),
-          x: e.clientX,
-          y: e.clientY,
+          x: x,
+          y: y,
           opacity: 1,
           scale: 0.91 + Math.random() * 0.91, // Increased scale by 40% + 30% more
           rotation: Math.random() * 360,
@@ -46,6 +45,25 @@ const CursorTrail = () => {
         
         setSparkles(prev => [...prev, newSparkle]);
         lastTime = currentTime;
+      }
+    };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      addSparkle(e.clientX, e.clientY);
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault(); // Prevent scrolling while creating trail
+      const touch = e.touches[0];
+      if (touch) {
+        addSparkle(touch.clientX, touch.clientY);
+      }
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      if (touch) {
+        addSparkle(touch.clientX, touch.clientY);
       }
     };
 
@@ -74,11 +92,16 @@ const CursorTrail = () => {
       animationFrameId = requestAnimationFrame(animate);
     };
 
+    // Add event listeners for both mouse and touch
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart);
     animate();
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchstart', handleTouchStart);
       if (animationFrameId) {
         cancelAnimationFrame(animationFrameId);
       }
