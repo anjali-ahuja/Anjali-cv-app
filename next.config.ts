@@ -6,8 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/CVApp' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/CVApp/' : '',
+  // Remove basePath and assetPrefix as the official workflow handles this automatically
 };
 
 export default nextConfig;
