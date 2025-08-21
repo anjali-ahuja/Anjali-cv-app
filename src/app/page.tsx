@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import ProjectsCarousel from "../components/ProjectsCarousel";
+import ProjectsSection from "../components/ProjectsSection";
 import ContactSection from "../components/ContactSection";
 import EducationSection from "../components/EducationSection";
 import WorkExperienceSection from "../components/WorkExperienceSection";
@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <WorkExperienceSection />
       <EducationSection />
-      <ProjectsCarousel />
+      <ProjectsSection />
       <ContactSection />
     </>
   );
