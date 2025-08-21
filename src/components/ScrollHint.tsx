@@ -16,6 +16,36 @@ const ScrollHint = () => {
     const main = document.querySelector("main");
     if (!main) return;
     
+    const pickActiveSectionColor = () => {
+      const centerX = Math.floor(window.innerWidth / 2);
+      const centerY = Math.floor(window.innerHeight / 2);
+      const el = document.elementFromPoint(centerX, centerY) as HTMLElement | null;
+      let node: HTMLElement | null = el;
+      let colorToken: string | null = null;
+
+      while (node) {
+        if (node.tagName && node.tagName.toLowerCase() === 'section') {
+          const computed = getComputedStyle(node);
+          const token = computed.getPropertyValue('--scroll-hint-color').trim();
+          if (token) {
+            colorToken = token;
+            break;
+          }
+        }
+        node = node.parentElement;
+      }
+
+      // Fallback to root default if nothing found
+      if (!colorToken) {
+        colorToken = getComputedStyle(document.documentElement)
+          .getPropertyValue('--scroll-hint-color')
+          .trim() || '#ffffff';
+      }
+
+      // Propagate to :root so the fixed ScrollHint inherits the correct value
+      document.documentElement.style.setProperty('--scroll-hint-color', colorToken);
+    };
+
     const update = () => {
       // Desktop horizontal scroll detection
       setCanScrollLeft(main.scrollLeft > 2);
@@ -27,6 +57,9 @@ const ScrollHint = () => {
         setCanScrollUp(window.scrollY > 2);
         setCanScrollDown(window.scrollY + window.innerHeight < document.documentElement.scrollHeight - 2);
       }
+
+      // Update active section color each tick
+      pickActiveSectionColor();
     };
     
     update();
@@ -59,7 +92,8 @@ const ScrollHint = () => {
                 transform: `translateX(${HORIZONTAL_WIGGLE[wiggleStep]}px)`,
                 transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
                 marginRight: '0.5rem',
-                color: 'var(--lime-green)',
+                color: 'var(--scroll-hint-color)',
+                textShadow: '0 1px 2px rgba(0,0,0,0.5)'
               }}
               className="text-lg"
               aria-hidden
@@ -67,7 +101,7 @@ const ScrollHint = () => {
               ←
             </span>
           )}
-          <span className="text-xs font-light mx-2" style={{ color: 'var(--lime-green)' }}>Scroll</span>
+          <span className="text-xs font-light mx-2" style={{ color: 'var(--scroll-hint-color)', textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>Scroll</span>
           {canScrollRight && (
             <span
               style={{
@@ -75,7 +109,8 @@ const ScrollHint = () => {
                 transform: `translateX(${HORIZONTAL_WIGGLE.map((v) => -v)[wiggleStep]}px)`,
                 transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
                 marginLeft: '0.5rem',
-                color: 'var(--lime-green)',
+                color: 'var(--scroll-hint-color)',
+                textShadow: '0 1px 2px rgba(0,0,0,0.5)'
               }}
               className="text-lg"
               aria-hidden
@@ -96,8 +131,9 @@ const ScrollHint = () => {
                 transform: `translateY(${VERTICAL_WIGGLE[wiggleStep]}px)`,
                 transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
                 marginBottom: '0.125rem',
-                color: 'var(--lime-green)',
-                opacity: 0.7,
+                color: 'var(--scroll-hint-color)',
+                opacity: 0.8,
+                textShadow: '0 1px 2px rgba(0,0,0,0.5)'
               }}
               className="text-sm"
               aria-hidden
@@ -105,7 +141,7 @@ const ScrollHint = () => {
               ↑
             </span>
           )}
-          <span className="text-xs font-light my-0.5" style={{ color: 'var(--lime-green)', opacity: 0.6 }}>Scroll</span>
+          <span className="text-xs font-light my-0.5" style={{ color: 'var(--scroll-hint-color)', opacity: 0.8, textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>Scroll</span>
           {canScrollDown && (
             <span
               style={{
@@ -113,8 +149,9 @@ const ScrollHint = () => {
                 transform: `translateY(${VERTICAL_WIGGLE.map((v) => -v)[wiggleStep]}px)`,
                 transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
                 marginTop: '0.125rem',
-                color: 'var(--lime-green)',
-                opacity: 0.7,
+                color: 'var(--scroll-hint-color)',
+                opacity: 0.8,
+                textShadow: '0 1px 2px rgba(0,0,0,0.5)'
               }}
               className="text-sm"
               aria-hidden

@@ -10,6 +10,7 @@
   --background: #fff;
   --foreground: #171717;
   --white: #fff;
+  --scroll-hint-color: #ffffff; /* default to white for contrast */
 }
 
 @theme inline {

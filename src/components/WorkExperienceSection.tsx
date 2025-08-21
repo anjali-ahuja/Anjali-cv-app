@@ -24,7 +24,11 @@ const WorkExperienceSection = () => {
   return (
     <section
       className="flex items-center justify-center min-h-screen w-full px-6 md:px-4 py-8"
-      style={{ background: "var(--lime-green)", color: "var(--primary-purple)" }}
+      style={{
+        background: "var(--lime-green)",
+        color: "var(--primary-purple)",
+        ['--scroll-hint-color']: "var(--primary-purple)",
+      } as React.CSSProperties}
     >
       <div className="text-center max-w-6xl px-8 py-6 h-full flex flex-col justify-center">
         <h2 className="text-2xl font-semibold mb-6">

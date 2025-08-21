@@ -24,7 +24,11 @@ const Hero = () => {
   return (
     <section
       className="flex flex-col md:flex-row items-center justify-center min-h-screen w-full px-6 md:px-16 lg:px-32 py-8 md:gap-6 lg:gap-10"
-      style={{ background: "var(--primary-purple)", color: "var(--soft-peach)" }}
+      style={{
+        background: "var(--primary-purple)",
+        color: "var(--soft-peach)",
+        ['--scroll-hint-color']: "var(--soft-peach)",
+      } as React.CSSProperties}
     >
       <div className="w-full md:w-1/2 flex flex-col items-center text-center max-w-2xl">
         <h1 className="text-4xl md:text-5xl mb-6 leading-tight">
