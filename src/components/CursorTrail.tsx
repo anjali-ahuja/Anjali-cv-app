@@ -15,7 +15,6 @@ interface Sparkle {
 
 const CursorTrail = () => {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   const colors = [
     'var(--primary-purple)',
@@ -31,8 +30,6 @@ const CursorTrail = () => {
     let lastTime = 0;
 
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-      
       // Add new sparkle every few frames
       const currentTime = Date.now();
       if (currentTime - lastTime > 24) { // Add sparkle every 24ms (increased frequency by 40% + 25% more)
@@ -86,7 +83,7 @@ const CursorTrail = () => {
         cancelAnimationFrame(animationFrameId);
       }
     };
-  }, []);
+  }, [colors]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-50">

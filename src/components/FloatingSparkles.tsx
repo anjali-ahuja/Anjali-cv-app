@@ -29,7 +29,6 @@ const FloatingSparkles = () => {
 
   useEffect(() => {
     let animationFrameId: number;
-    let lastTime = 0;
 
     // Initialize sparkles
     const initializeSparkles = () => {
@@ -119,7 +118,7 @@ const FloatingSparkles = () => {
         cancelAnimationFrame(animationFrameId);
       }
     };
-  }, []);
+  }, [colors]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-10">
