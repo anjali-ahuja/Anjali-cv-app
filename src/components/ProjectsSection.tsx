@@ -7,9 +7,9 @@ import SectionTitle from "./SectionTitle";
 const ProjectsSection = () => {
   return (
     <section
-      className="flex items-center justify-center min-h-screen w-full px-6 md:px-4 py-8"
+      className="flex items-center justify-center py-8 md:min-h-screen w-full px-6 md:px-4"
       style={{
-        background: "var(--accent-aqua)",
+        background: "var(--soft-peach)",
         color: "var(--primary-purple)",
         ['--scroll-hint-color']: "var(--primary-purple)",
       } as React.CSSProperties}

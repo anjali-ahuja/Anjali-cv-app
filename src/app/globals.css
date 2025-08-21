@@ -52,15 +52,25 @@ body {
 
 /* Mobile-specific scrolling fixes */
 @media (max-width: 768px) {
+  html {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
   body {
     position: relative;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    height: auto !important;
+    min-height: 100vh;
   }
   
   main {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: 100vh;
     -webkit-overflow-scrolling: touch;
   }
 }

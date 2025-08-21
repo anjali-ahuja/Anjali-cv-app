@@ -33,14 +33,12 @@ export default function RootLayout({
         <FloatingSparkles />
         {/* Cursor trail effect */}
         <CursorTrail />
-        {/* Responsive layout: vertical scroll on mobile, horizontal on desktop */}
-        <main
-          className="flex flex-col md:flex-row md:overflow-x-auto md:overflow-y-hidden md:scroll-smooth md:h-screen md:w-screen md:[&>*]:min-w-full md:[&>*]:h-screen md:[&>*]:flex-shrink-0 md:no-scrollbar"
-          style={{ 
-            minHeight: '100vh',
-            WebkitOverflowScrolling: 'touch' // Enable smooth scrolling on iOS
-          }}
-        >
+        {/* Mobile: vertical scroll layout */}
+        <main className="md:hidden flex flex-col w-full">
+          {children}
+        </main>
+        {/* Desktop: horizontal scroll layout */}
+        <main className="hidden md:flex md:flex-row md:overflow-x-auto md:overflow-y-hidden md:scroll-smooth md:h-screen md:w-screen md:[&>*]:min-w-full md:[&>*]:h-screen md:[&>*]:flex-shrink-0 md:no-scrollbar">
           {children}
         </main>
       </body>

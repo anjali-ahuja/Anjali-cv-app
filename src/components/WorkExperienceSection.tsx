@@ -7,7 +7,7 @@ import SectionTitle from "./SectionTitle";
 const WorkExperienceSection = () => {
   return (
     <section
-      className="flex items-center justify-center min-h-screen w-full px-6 md:px-4 py-8"
+      className="flex items-center justify-center py-8 md:min-h-screen w-full px-6 md:px-4"
       style={{
         background: "var(--lime-green)",
         color: "var(--primary-purple)",
