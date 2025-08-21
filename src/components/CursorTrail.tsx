@@ -53,7 +53,7 @@ const CursorTrail = () => {
     };
 
     const handleTouchMove = (e: TouchEvent) => {
-      e.preventDefault(); // Prevent scrolling while creating trail
+      // Don't prevent default scrolling on mobile
       const touch = e.touches[0];
       if (touch) {
         addSparkle(touch.clientX, touch.clientY);
