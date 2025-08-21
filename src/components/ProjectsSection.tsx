@@ -31,7 +31,7 @@ const ProjectsSection = () => {
           {/* Amazon Accomplishments - Large Card */}
           <div className="h-full bg-white/50 rounded-lg p-4 shadow-sm flex flex-col text-left relative">
             <div className="flex items-center mb-3">
-              <img src="/globe.svg" alt="Amazon" className="w-10 h-10 mr-3 rounded" />
+              <img src="/projects/amazon_accomplishments.svg" alt="Amazon" className="w-[3.125rem] h-[3.125rem] mr-3 rounded" />
               <div>
                 <h3 className="text-lg font-semibold text-[var(--primary-purple)]">Accomplishments at Amazon</h3>
                 <span className="text-xs text-[var(--primary-purple)]">Aug 2022 – Jul 2025</span>
@@ -55,7 +55,7 @@ const ProjectsSection = () => {
             {/* Microsoft X EY Datathon */}
             <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col justify-between text-left">
               <div className="flex items-center mb-3">
-                <img src="/window.svg" alt="Datathon" className="w-9 h-9 mr-3 rounded" />
+                <img src="/projects/microsoft_ey_datathon.svg" alt="Datathon" className="w-[2.8125rem] h-[2.8125rem] mr-3 rounded" />
                 <div>
                   <h3 className="text-lg font-semibold text-[var(--primary-purple)]">Global Semifinalist: Microsoft X EY Datathon</h3>
                   <span className="text-xs text-[var(--primary-purple)]">May 2022 - June 2022</span>
@@ -77,7 +77,7 @@ const ProjectsSection = () => {
             {/* Date Ideas App */}
             <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col justify-between text-left">
               <div className="flex items-center mb-3">
-                <img src="/file.svg" alt="Date Ideas App" className="w-9 h-9 mr-3 rounded" />
+                <img src="/projects/date_ideas_app.svg" alt="Date Ideas App" className="w-[2.8125rem] h-[2.8125rem] mr-3 rounded" />
                 <div>
                   <h3 className="text-lg font-semibold text-[var(--primary-purple)]">Date Ideas App</h3>
                   <span className="text-xs text-[var(--primary-purple)]">Feb 2022</span>

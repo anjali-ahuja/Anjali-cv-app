@@ -1,0 +1,134 @@
+<!-- Female Builder (10% slimmer): 32x32 pixel grid, subtle shading, no background -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="crispEdges">
+  <!-- palette
+    outline:   #0f1e0f
+    helmetL:   #f7c948
+    helmetM:   #e0b026
+    helmetD:   #c7920e
+    hair:      #111111
+    skin:      #f2c9a0
+    cheek:     #f48fb1
+    eye:       #000000
+    white:     #ffffff
+    mouth:     #3f312a
+    shirtL:    #64a8ff
+    shirt:     #3b82f6
+    shirtD:    #2367d1
+    vest:      #f28c28
+    vestD:     #c76e1b
+    stripe:    #ffd166
+    belt:      #2b2b2b
+    buckle:    #cfcfcf
+  -->
+
+  <!-- HELMET DOME (narrowed ~10%) -->
+  <g fill="#f7c948">
+    <rect x="11" y="4" width="10" height="1"/>
+    <rect x="10" y="5" width="12" height="1"/>
+    <rect x="9"  y="6" width="14" height="1"/>
+  </g>
+  <g fill="#e0b026">
+    <rect x="9"  y="7" width="14" height="1"/>
+    <rect x="10" y="8" width="12" height="1"/>
+  </g>
+  <g fill="#c7920e">
+    <!-- top shadow band -->
+    <rect x="11" y="5" width="10" height="1"/>
+    <rect x="10" y="6" width="12" height="1"/>
+    <rect x="9"  y="7" width="2"  height="1"/><rect x="21" y="7" width="2" height="1"/>
+  </g>
+
+  <!-- HELMET BRIM -->
+  <g fill="#e0b026">
+    <rect x="8"  y="9" width="16" height="1"/>
+  </g>
+  <g fill="#c7920e">
+    <rect x="9"  y="10" width="14" height="1"/>
+  </g>
+
+  <!-- HAIR (sides pulled in to match slimmer width) -->
+  <g fill="#111111">
+    <rect x="8"  y="11" width="2" height="7"/>
+    <rect x="22" y="11" width="2" height="7"/>
+    <!-- fringe under brim edges -->
+    <rect x="10" y="10" width="2" height="1"/>
+    <rect x="20" y="10" width="2" height="1"/>
+  </g>
+
+  <!-- FACE -->
+  <g fill="#f2c9a0">
+    <rect x="11" y="11" width="10" height="1"/>
+    <rect x="10" y="12" width="12" height="1"/>
+    <rect x="10" y="13" width="12" height="1"/>
+    <rect x="10" y="14" width="12" height="1"/>
+    <rect x="11" y="15" width="10" height="1"/>
+    <!-- neck -->
+    <rect x="14" y="16" width="4"  height="1"/>
+  </g>
+
+  <!-- CHEEKS -->
+  <g fill="#f48fb1">
+    <rect x="11" y="14" width="2" height="1"/>
+    <rect x="19" y="14" width="2" height="1"/>
+  </g>
+
+  <!-- EYES + HIGHLIGHTS -->
+  <g fill="#000000">
+    <rect x="12" y="12" width="2" height="2"/>
+    <rect x="18" y="12" width="2" height="2"/>
+  </g>
+  <g fill="#ffffff">
+    <rect x="13" y="12" width="1" height="1"/>
+    <rect x="19" y="12" width="1" height="1"/>
+  </g>
+
+  <!-- SMILE -->
+  <g fill="#3f312a">
+    <rect x="14" y="15" width="4" height="1"/>
+    <rect x="13" y="14" width="1" height="1"/><rect x="19" y="14" width="1" height="1"/>
+  </g>
+
+  <!-- SHIRT (3-tone) -->
+  <g fill="#64a8ff">
+    <rect x="9"  y="17" width="14" height="1"/>
+  </g>
+  <g fill="#3b82f6">
+    <rect x="8"  y="18" width="16" height="2"/>
+    <rect x="9"  y="20" width="14" height="1"/>
+  </g>
+  <g fill="#2367d1">
+    <rect x="8"  y="19" width="2" height="1"/><rect x="22" y="19" width="2" height="1"/>
+    <rect x="9"  y="20" width="2" height="1"/><rect x="21" y="20" width="2" height="1"/>
+  </g>
+
+  <!-- VEST (narrowed panels + edge shading) -->
+  <g fill="#f28c28">
+    <rect x="9"  y="17" width="3" height="6"/>
+    <rect x="20" y="17" width="3" height="6"/>
+  </g>
+  <g fill="#c76e1b">
+    <rect x="9"  y="17" width="1" height="6"/>
+    <rect x="22" y="17" width="1" height="6"/>
+  </g>
+
+  <!-- REFLECTIVE STRIPES -->
+  <g fill="#ffd166">
+    <rect x="10" y="17" width="1" height="6"/>
+    <rect x="21" y="17" width="1" height="6"/>
+    <rect x="9"  y="22" width="14" height="1"/>
+  </g>
+
+  <!-- ARMS / SLEEVES (brought in by 1px each side) -->
+  <g fill="#3b82f6">
+    <rect x="6"  y="21" width="3" height="1"/>
+    <rect x="23" y="21" width="3" height="1"/>
+  </g>
+
+  <!-- BELT + BUCKLE -->
+  <g fill="#2b2b2b">
+    <rect x="10" y="22" width="12" height="1"/>
+  </g>
+  <g fill="#cfcfcf">
+    <rect x="15" y="22" width="2"  height="1"/>
+  </g>
+</svg>
