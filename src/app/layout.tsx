@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ScrollHint from "../components/ScrollHint";
 import CursorTrail from "../components/CursorTrail";
+import FloatingSparkles from "../components/FloatingSparkles";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,8 @@ export default function RootLayout({
       >
         {/* Sticky SVGs */}
         <ScrollHint />
+        {/* Ambient floating sparkles */}
+        <FloatingSparkles />
         {/* Cursor trail effect */}
         <CursorTrail />
         {/* Responsive layout: horizontal scroll on desktop, vertical on mobile */}
