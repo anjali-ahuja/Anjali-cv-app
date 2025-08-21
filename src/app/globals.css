@@ -49,3 +49,11 @@ body {
 .no-scrollbar::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
+
+/* Pixel art cursor trail styles */
+.cursor-trail-sparkle {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  will-change: transform, opacity;
+}

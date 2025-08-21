@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ScrollHint from "../components/ScrollHint";
+import CursorTrail from "../components/CursorTrail";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,6 +25,8 @@ export default function RootLayout({
       >
         {/* Sticky SVGs */}
         <ScrollHint />
+        {/* Cursor trail effect */}
+        <CursorTrail />
         {/* Responsive layout: horizontal scroll on desktop, vertical on mobile */}
         <main
           className="flex flex-col md:flex-row md:overflow-x-auto md:overflow-y-hidden md:scroll-smooth md:h-screen md:w-screen md:[&>*]:min-w-full md:[&>*]:h-screen md:[&>*]:flex-shrink-0 md:no-scrollbar"
