@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { getAssetPath } from "../utils/paths";
 import SectionTitle from "./SectionTitle";
 
 const WorkExperienceSection = () => {
@@ -34,7 +35,7 @@ const WorkExperienceSection = () => {
             <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="flex justify-between items-start mb-3">
                 <div className="flex items-center gap-3">
-                  <img src="/work-experience/canva_logo.jpeg" alt="Canva logo" className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
+                  <img src={getAssetPath("/work-experience/canva_logo.jpeg")} alt="Canva logo" className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
                   <div>
                     <h4 className="text-lg font-semibold">Canva</h4>
                     <p className="text-base text-gray-700">Software Engineer</p>
@@ -50,7 +51,7 @@ const WorkExperienceSection = () => {
             <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="flex justify-between items-start mb-3">
                 <div className="flex items-center gap-3">
-                  <img src="/work-experience/amazon_logo.jpeg" alt="Amazon logo" className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
+                  <img src={getAssetPath("/work-experience/amazon_logo.jpeg")} alt="Amazon logo" className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
                   <div>
                     <h4 className="text-lg font-semibold">Amazon</h4>
                     <p className="text-base text-gray-700">Software Development Engineer</p>
@@ -74,7 +75,7 @@ const WorkExperienceSection = () => {
             <div className="bg-white/50 rounded-lg p-4 shadow-sm h-full hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="flex justify-between items-start mb-3">
                 <div className="flex items-center gap-3">
-                  <img src="/work-experience/ernstandyoung_logo.jpeg" alt="Ernst & Young logo" className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
+                  <img src={getAssetPath("/work-experience/ernstandyoung_logo.jpeg")} alt="Ernst & Young logo" className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
                   <h4 className="text-lg font-semibold">Ernst & Young</h4>
                 </div>
               </div>

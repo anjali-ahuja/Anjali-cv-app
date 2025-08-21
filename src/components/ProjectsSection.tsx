@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { getAssetPath } from "../utils/paths";
 import SectionTitle from "./SectionTitle";
 
 const ProjectsSection = () => {
@@ -40,7 +41,7 @@ const ProjectsSection = () => {
           {/* Amazon Accomplishments - Large Card */}
           <div className="h-full bg-white/50 rounded-lg p-4 shadow-sm flex flex-col text-left relative hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
             <div className="flex items-center mb-3">
-              <img src="/projects/amazon_accomplishments.svg" alt="Amazon" className="w-[3.125rem] h-[3.125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
+              <img src={getAssetPath("/projects/amazon_accomplishments.svg")} alt="Amazon" className="w-[3.125rem] h-[3.125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
               <div>
                 <h3 className="text-lg font-semibold text-[var(--primary-purple)]">Accomplishments at Amazon</h3>
                 <span className="text-xs text-[var(--primary-purple)]">Aug 2022 – Jul 2025</span>
@@ -64,7 +65,7 @@ const ProjectsSection = () => {
             {/* Microsoft X EY Datathon */}
             <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col justify-between text-left hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="flex items-center mb-3">
-                <img src="/projects/microsoft_ey_datathon.svg" alt="Datathon" className="w-[2.8125rem] h-[2.8125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
+                <img src={getAssetPath("/projects/microsoft_ey_datathon.svg")} alt="Datathon" className="w-[2.8125rem] h-[2.8125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
                 <div>
                   <h3 className="text-lg font-semibold text-[var(--primary-purple)]">Global Semifinalist: Microsoft X EY Datathon</h3>
                   <span className="text-xs text-[var(--primary-purple)]">May 2022 - June 2022</span>
@@ -86,7 +87,7 @@ const ProjectsSection = () => {
             {/* Date Ideas App */}
             <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col justify-between text-left hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="flex items-center mb-3">
-                <img src="/projects/date_ideas_app.svg" alt="Date Ideas App" className="w-[2.8125rem] h-[2.8125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
+                <img src={getAssetPath("/projects/date_ideas_app.svg")} alt="Date Ideas App" className="w-[2.8125rem] h-[2.8125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
                 <div>
                   <h3 className="text-lg font-semibold text-[var(--primary-purple)]">Date Ideas App</h3>
                   <span className="text-xs text-[var(--primary-purple)]">Feb 2022</span>
