@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
+import Image from "next/image";
 import { getAssetPath } from "../utils/paths";
 
 const Hero = () => {
@@ -76,9 +77,11 @@ const Hero = () => {
         </motion.div>
       </div>
       <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
-        <img
+        <Image
           src={getAssetPath("/hero/hero-photo.jpg")}
           alt="Anjali smiling with headphones on"
+          width={400}
+          height={400}
           className="rounded-lg shadow-lg object-cover max-w-xs md:max-w-sm lg:max-w-md w-full h-64 md:h-96 hover:shadow-xl transition-all duration-300 ease-in-out"
           style={{ background: "rgba(255,255,255,0.15)" }}
         />

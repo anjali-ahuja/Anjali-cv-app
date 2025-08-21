@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 interface Sparkle {
   id: number;
@@ -16,14 +16,14 @@ interface Sparkle {
 const CursorTrail = () => {
   const [sparkles, setSparkles] = useState<Sparkle[]>([]);
 
-  const colors = [
+  const colors = useMemo(() => [
     'var(--primary-purple)',
     'var(--accent-aqua)', 
     'var(--soft-peach)',
     'var(--lime-green)',
     'var(--pink)',
     'var(--coral)'
-  ];
+  ], []);
 
   useEffect(() => {
     let animationFrameId: number;
