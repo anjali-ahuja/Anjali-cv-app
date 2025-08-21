@@ -51,7 +51,7 @@ This app is configured to deploy automatically to GitHub Pages.
 1. Go to your repository settings
 2. Navigate to "Pages" section
 3. Set source to "GitHub Actions"
-4. The app will be available at: `https://[your-username].github.io/CVApp/`
+4. The app will be available at: `https://anjali-ahuja.github.io/Anjali-cv-app/`
 
 ## Technologies Used
 
@@ -60,3 +60,4 @@ This app is configured to deploy automatically to GitHub Pages.
 - TypeScript
 - Tailwind CSS
 - Framer Motion
+# Force new deployment
