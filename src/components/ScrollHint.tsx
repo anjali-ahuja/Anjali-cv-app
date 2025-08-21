@@ -12,8 +12,9 @@ const ScrollHint = () => {
   const [wiggleStep, setWiggleStep] = useState(0);
 
   useEffect(() => {
-    // Find the main scrollable container
-    const main = document.querySelector("main");
+    // Find the main scrollable container - prefer desktop main for horizontal scrolling
+    const mains = document.querySelectorAll("main");
+    const main = Array.from(mains).find(m => m.classList.contains("md:flex")) || mains[0];
     if (!main) return;
     
     const pickActiveSectionColor = () => {

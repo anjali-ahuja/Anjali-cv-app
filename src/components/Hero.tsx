@@ -32,7 +32,7 @@ const Hero = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col md:flex-row items-center justify-center py-8 md:min-h-screen w-full px-6 md:px-16 lg:px-32 md:gap-6 lg:gap-10"
+      className="flex flex-col md:flex-row items-center justify-center py-8 md:min-h-screen w-full px-12 md:px-16 lg:px-32 md:gap-6 lg:gap-10"
       style={{
         background: "var(--primary-purple)",
         color: "var(--soft-peach)",
