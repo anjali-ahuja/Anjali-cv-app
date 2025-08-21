@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  // Remove basePath and assetPrefix as the official workflow handles this automatically
+  basePath: process.env.NODE_ENV === 'production' ? '/Anjali-cv-app' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Anjali-cv-app/' : '',
 };
 
 export default nextConfig;
