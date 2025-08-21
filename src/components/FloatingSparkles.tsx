@@ -44,7 +44,7 @@ const FloatingSparkles = () => {
           scale: 0.39 + Math.random() * 0.52, // 30% larger (0.3*1.3=0.39, 0.4*1.3=0.52)
           rotation: Math.random() * 360,
           color: colors[Math.floor(Math.random() * colors.length)],
-          speed: 0.45 + Math.random() * 0.9, // 10% slower (0.5*0.9=0.45, 1*0.9=0.9)
+          speed: 0.225 + Math.random() * 0.45, // 50% slower (0.45*0.5=0.225, 0.9*0.5=0.45)
           direction: Math.random() * Math.PI * 2, // Random direction
           createdAt: Date.now()
         });
@@ -72,7 +72,7 @@ const FloatingSparkles = () => {
               scale: 0.39 + Math.random() * 0.52,
               rotation: Math.random() * 360,
               color: colors[Math.floor(Math.random() * colors.length)],
-              speed: 0.45 + Math.random() * 0.9,
+              speed: 0.225 + Math.random() * 0.45,
               direction: Math.random() * Math.PI * 2,
               createdAt: now
             };
@@ -83,7 +83,7 @@ const FloatingSparkles = () => {
           const newY = sparkle.y + Math.sin(sparkle.direction) * sparkle.speed;
           
           // Subtle rotation
-          const newRotation = sparkle.rotation + 0.2;
+          const newRotation = sparkle.rotation + 0.1; // 50% slower rotation
           
           return {
             ...sparkle,

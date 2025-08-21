@@ -32,7 +32,7 @@ const CursorTrail = () => {
     const handleMouseMove = (e: MouseEvent) => {
       // Add new sparkle every few frames
       const currentTime = Date.now();
-      if (currentTime - lastTime > 24) { // Add sparkle every 24ms (increased frequency by 40% + 25% more)
+      if (currentTime - lastTime > 48) { // Add sparkle every 48ms (50% slower - 24*2=48)
         const newSparkle: Sparkle = {
           id: currentTime + Math.random(),
           x: e.clientX,
@@ -55,7 +55,7 @@ const CursorTrail = () => {
         return prev
           .map(sparkle => {
             const age = now - sparkle.createdAt;
-            const maxAge = 1400; // 1.4 seconds lifetime (increased by 40%)
+            const maxAge = 2800; // 2.8 seconds lifetime (50% slower - 1400*2=2800)
             
             if (age > maxAge) return null;
             
@@ -64,8 +64,8 @@ const CursorTrail = () => {
               ...sparkle,
               opacity: 1 - progress,
               scale: sparkle.scale * (1 - progress * 0.5),
-              y: sparkle.y - progress * 28, // Float upward (increased by 40%)
-              x: sparkle.x + (Math.random() - 0.5) * 2.8 // Slight horizontal drift (increased by 40%)
+              y: sparkle.y - progress * 14, // Float upward (50% slower - 28*0.5=14)
+              x: sparkle.x + (Math.random() - 0.5) * 1.4 // Slight horizontal drift (50% slower - 2.8*0.5=1.4)
             };
           })
           .filter(Boolean) as Sparkle[];
