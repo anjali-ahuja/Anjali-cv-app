@@ -6,11 +6,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  // Only use basePath and assetPrefix for production builds
-  ...(process.env.NODE_ENV === 'production' && {
-    basePath: '/Anjali-cv-app',
-    assetPrefix: '/Anjali-cv-app/',
-  }),
+  // Use basePath for GitHub Pages deployment
+  basePath: process.env.NODE_ENV === 'production' ? '/Anjali-cv-app' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Anjali-cv-app/' : '',
 };
 
 export default nextConfig;
