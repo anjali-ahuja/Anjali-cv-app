@@ -38,8 +38,11 @@ const Hero = () => {
       } as React.CSSProperties}
     >
       <div className="w-full md:w-1/2 flex flex-col items-center text-center max-w-2xl">
-        <h1 className="text-4xl md:text-5xl mb-6 leading-tight">
-          <span style={{ minHeight: 48, display: "inline-block", letterSpacing: "0.02em", color: "var(--lime-green)" }}>
+        <h1 className="text-4xl md:text-5xl mb-6 leading-tight hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+          <span 
+            style={{ minHeight: 48, display: "inline-block", letterSpacing: "0.02em", color: "var(--lime-green)" }}
+            className="hover:text-opacity-80 transition-all duration-300 ease-in-out"
+          >
             {displayedText}
             <span className="animate-pulse">|</span>
           </span>
@@ -75,7 +78,7 @@ const Hero = () => {
         <img
           src="/hero/hero-photo.jpg"
           alt="Anjali smiling with headphones on"
-          className="rounded-lg shadow-lg object-cover max-w-xs md:max-w-sm lg:max-w-md w-full h-64 md:h-96"
+          className="rounded-lg shadow-lg object-cover max-w-xs md:max-w-sm lg:max-w-md w-full h-64 md:h-96 hover:shadow-xl transition-all duration-300 ease-in-out"
           style={{ background: "rgba(255,255,255,0.15)" }}
         />
       </div>

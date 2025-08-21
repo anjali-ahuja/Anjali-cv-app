@@ -16,7 +16,7 @@ const EducationSection = () => {
         <SectionTitle 
           text="Education" 
           as="h2" 
-          className="text-2xl font-semibold mb-6" 
+          className="text-2xl font-semibold mb-6 hover:scale-105 transition-transform duration-300 ease-in-out" 
         />
         
         {/* Intro Paragraph - Top Row */}
@@ -30,8 +30,8 @@ const EducationSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* Formal Education Section */}
           <div className="text-left">
-            <h3 className="text-lg font-semibold mb-4">🎓 Formal Education</h3>
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm">
+            <h3 className="text-lg font-semibold mb-4"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">🎓</span> Formal Education</h3>
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <h4 className="text-lg font-semibold mb-2">Bachelor of Computer Science</h4>
               <p className="text-base mb-3">University of Melbourne — 2018 – 2020</p>
               <ul className="space-y-1 text-sm">
@@ -45,8 +45,8 @@ const EducationSection = () => {
 
           {/* Certifications Section */}
           <div className="text-left">
-            <h3 className="text-lg font-semibold mb-4">📜 Certifications</h3>
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm">
+            <h3 className="text-lg font-semibold mb-4"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">📜</span> Certifications</h3>
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="space-y-3">
                 <div>
                   <div className="flex justify-between items-center">
@@ -86,8 +86,8 @@ const EducationSection = () => {
 
         {/* Ongoing Learning Section - Bottom Row */}
         <div className="text-left">
-          <h3 className="text-lg font-semibold mb-4">📚 Ongoing Learning</h3>
-          <div className="bg-white/50 rounded-lg p-4 shadow-sm">
+          <h3 className="text-lg font-semibold mb-4"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">📚</span> Ongoing Learning</h3>
+          <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
             <p className="text-sm leading-relaxed">
               I&apos;m currently deepening my skills in system design, machine learning, and product analytics — and outside of work, I&apos;m also working on sharpening my chess game and strategic thinking.
               If you&apos;re exploring similar topics, I&apos;d love to connect and learn together — feel free to reach out!

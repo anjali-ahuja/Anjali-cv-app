@@ -16,7 +16,7 @@ const WorkExperienceSection = () => {
         <SectionTitle 
           text="Work Experience" 
           as="h2" 
-          className="text-2xl font-semibold mb-6" 
+          className="text-2xl font-semibold mb-6 hover:scale-105 transition-transform duration-300 ease-in-out" 
         />
         
         {/* Intro Paragraph - Top Row */}
@@ -31,10 +31,10 @@ const WorkExperienceSection = () => {
           {/* Left Column: Current and Recent Companies */}
           <div className="text-left flex flex-col gap-4 lg:gap-6">
             {/* Canva - Current Company */}
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="flex justify-between items-start mb-3">
                 <div className="flex items-center gap-3">
-                  <img src="/work-experience/canva_logo.jpeg" alt="Canva logo" className="w-8 h-8 rounded" />
+                  <img src="/work-experience/canva_logo.jpeg" alt="Canva logo" className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
                   <div>
                     <h4 className="text-lg font-semibold">Canva</h4>
                     <p className="text-base text-gray-700">Software Engineer</p>
@@ -43,14 +43,14 @@ const WorkExperienceSection = () => {
                 <span className="text-sm text-gray-600">July 2025 – Present</span>
               </div>
               <ul className="space-y-1 text-xs">
-                <li>• Ramping up to improve data warehouse experiences for teams across the company 🏗️</li>
+                <li>• Ramping up to improve data warehouse experiences for teams across the company <span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">🏗️</span></li>
               </ul>
             </div>
             {/* Amazon - Previous Company */}
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="flex justify-between items-start mb-3">
                 <div className="flex items-center gap-3">
-                  <img src="/work-experience/amazon_logo.jpeg" alt="Amazon logo" className="w-8 h-8 rounded" />
+                  <img src="/work-experience/amazon_logo.jpeg" alt="Amazon logo" className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
                   <div>
                     <h4 className="text-lg font-semibold">Amazon</h4>
                     <p className="text-base text-gray-700">Software Development Engineer</p>
@@ -71,10 +71,10 @@ const WorkExperienceSection = () => {
 
           {/* Right Column: EY */}
           <div className="text-left">
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm h-full">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm h-full hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="flex justify-between items-start mb-3">
                 <div className="flex items-center gap-3">
-                  <img src="/work-experience/ernstandyoung_logo.jpeg" alt="Ernst & Young logo" className="w-8 h-8 rounded" />
+                  <img src="/work-experience/ernstandyoung_logo.jpeg" alt="Ernst & Young logo" className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
                   <h4 className="text-lg font-semibold">Ernst & Young</h4>
                 </div>
               </div>
@@ -108,8 +108,8 @@ const WorkExperienceSection = () => {
 
         {/* Key Skills Section - Bottom Row */}
         <div className="text-left">
-          <h3 className="text-lg font-semibold mb-4">🛠️ Key Skills & Technologies</h3>
-          <div className="bg-white/50 rounded-lg p-4 shadow-sm">
+          <h3 className="text-lg font-semibold mb-4"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">🛠️</span> Key Skills & Technologies</h3>
+          <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
             <p className="text-sm leading-relaxed mb-3">
               I&apos;m a full-stack software engineer with a focus on building clean, scalable systems — from front-end interfaces to backend services and data platforms. I work fluently with React, TypeScript, Python, Java, Kotlin, and AWS, and have contributed to high-impact projects in both product and consulting environments.
 

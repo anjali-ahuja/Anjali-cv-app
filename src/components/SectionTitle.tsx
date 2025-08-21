@@ -78,7 +78,11 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   return React.createElement(
     Tag,
     { className },
-    <span ref={innerRef} style={{ minHeight: "2rem", display: "inline-block" }}>
+    <span 
+      ref={innerRef} 
+      style={{ minHeight: "2rem", display: "inline-block" }}
+      className="hover:scale-105 hover:text-opacity-80 transition-all duration-300 ease-in-out cursor-pointer"
+    >
       {displayedText}
       {showCursor && <span className="animate-pulse">|</span>}
     </span>
