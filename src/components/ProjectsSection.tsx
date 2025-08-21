@@ -37,17 +37,17 @@ const ProjectsSection = () => {
                 <span className="text-xs text-[var(--primary-purple)]">Aug 2022 – Jul 2025</span>
               </div>
             </div>
-            <ul className="space-y-1 text-sm leading-snug text-[var(--primary-purple)]">
-              <li>• Reduced canary testing costs for a control plane service by 80% through targeted improvements to test templates.</li>
+            <ul className="list-disc pl-5 marker:text-base space-y-1 text-sm leading-snug text-[var(--primary-purple)]">
+              <li>Reduced canary testing costs for a control plane service by 80% through targeted improvements to test templates.</li>
               <li>
-                • Delivered multiple features for the Buy with Prime ecosystem, including:
-                <ul className="mt-1 ml-5 list-disc space-y-1 text-sm leading-snug">
+                Delivered multiple features for the Buy with Prime ecosystem, including:
+                <ul className="mt-1 pl-[2.592rem] list-disc marker:text-xs space-y-1 text-sm leading-snug">
                   <li>Shopify integration enhancements such as return synchronisation and virtual bundles support</li>
                   <li>Frontends for Multi-Channel Fulfillment and Buy with Prime apps</li>
                   <li>Control plane provisioning logic for Salesforce Commerce Cloud integration, including sandbox capabilities</li>
                 </ul>
               </li>
-              <li>• Designed and implemented event-driven automation for account suspensions and closures, eliminating the need for manual operational tickets.</li>
+              <li>Designed and implemented event-driven automation for account suspensions and closures, eliminating the need for manual operational tickets.</li>
             </ul>
           </div>
           {/* Right Column: Two Smaller Cards */}
