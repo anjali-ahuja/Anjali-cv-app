@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/Anjali-cv-app' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/Anjali-cv-app/' : '',
+  basePath: process.env.NODE_ENV === 'production' ? (process.env.NEXT_PUBLIC_BASE_PATH || '/Anjali-cv-app') : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? (process.env.NEXT_PUBLIC_BASE_PATH || '/Anjali-cv-app') + '/' : '',
 };
 
 export default nextConfig;
