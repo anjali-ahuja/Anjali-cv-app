@@ -34,10 +34,35 @@
   }
 }
 
+/* Ensure proper scrolling on mobile devices */
+html {
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Mobile-specific scrolling fixes */
+@media (max-width: 768px) {
+  body {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  main {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 /* Hide scrollbar but keep functionality */

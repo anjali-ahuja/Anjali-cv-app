@@ -21,6 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
       >
@@ -30,9 +33,13 @@ export default function RootLayout({
         <FloatingSparkles />
         {/* Cursor trail effect */}
         <CursorTrail />
-        {/* Responsive layout: horizontal scroll on desktop, vertical on mobile */}
+        {/* Responsive layout: vertical scroll on mobile, horizontal on desktop */}
         <main
           className="flex flex-col md:flex-row md:overflow-x-auto md:overflow-y-hidden md:scroll-smooth md:h-screen md:w-screen md:[&>*]:min-w-full md:[&>*]:h-screen md:[&>*]:flex-shrink-0 md:no-scrollbar"
+          style={{ 
+            minHeight: '100vh',
+            WebkitOverflowScrolling: 'touch' // Enable smooth scrolling on iOS
+          }}
         >
           {children}
         </main>

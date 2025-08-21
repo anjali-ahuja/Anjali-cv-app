@@ -47,15 +47,36 @@ const ScrollHint = () => {
     };
 
     const update = () => {
-      // Desktop horizontal scroll detection
-      setCanScrollLeft(main.scrollLeft > 2);
-      setCanScrollRight(main.scrollLeft + main.clientWidth < main.scrollWidth - 2);
-      
-      // Mobile vertical scroll detection
       const isMobile = window.innerWidth < 768; // md breakpoint
+      
       if (isMobile) {
-        setCanScrollUp(window.scrollY > 2);
-        setCanScrollDown(window.scrollY + window.innerHeight < document.documentElement.scrollHeight - 2);
+        // Mobile vertical scroll detection
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const documentHeight = Math.max(
+          document.body.scrollHeight,
+          document.body.offsetHeight,
+          document.documentElement.clientHeight,
+          document.documentElement.scrollHeight,
+          document.documentElement.offsetHeight
+        );
+        
+        // Show up arrow if we can scroll up (not at the top)
+        setCanScrollUp(scrollTop > 5);
+        // Show down arrow if we can scroll down (not at the bottom)
+        setCanScrollDown(scrollTop + windowHeight < documentHeight - 5);
+        
+        // Reset horizontal scroll states on mobile
+        setCanScrollLeft(false);
+        setCanScrollRight(false);
+      } else {
+        // Desktop horizontal scroll detection
+        setCanScrollLeft(main.scrollLeft > 2);
+        setCanScrollRight(main.scrollLeft + main.clientWidth < main.scrollWidth - 2);
+        
+        // Reset vertical scroll states on desktop
+        setCanScrollUp(false);
+        setCanScrollDown(false);
       }
 
       // Update active section color each tick
@@ -122,7 +143,7 @@ const ScrollHint = () => {
       </div>
 
       {/* Mobile vertical scroll hint */}
-      <div className="md:hidden fixed right-2 top-1/2 transform -translate-y-1/2 z-40 pointer-events-none">
+      <div className="md:hidden fixed right-4 top-1/2 transform -translate-y-1/2 z-40 pointer-events-none">
         <div className="flex flex-col items-center select-none">
           {canScrollUp && (
             <span
@@ -130,30 +151,28 @@ const ScrollHint = () => {
                 display: "inline-block",
                 transform: `translateY(${VERTICAL_WIGGLE[wiggleStep]}px)`,
                 transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
-                marginBottom: '0.125rem',
+                marginBottom: '0.5rem',
                 color: 'var(--scroll-hint-color)',
-                opacity: 0.8,
                 textShadow: '0 1px 2px rgba(0,0,0,0.5)'
               }}
-              className="text-sm"
+              className="text-lg"
               aria-hidden
             >
               ↑
             </span>
           )}
-          <span className="text-xs font-light my-0.5" style={{ color: 'var(--scroll-hint-color)', opacity: 0.8, textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>Scroll</span>
+          <span className="text-xs font-light my-2" style={{ color: 'var(--scroll-hint-color)', textShadow: '0 1px 2px rgba(0,0,0,0.5)' }}>Scroll</span>
           {canScrollDown && (
             <span
               style={{
                 display: "inline-block",
                 transform: `translateY(${VERTICAL_WIGGLE.map((v) => -v)[wiggleStep]}px)`,
                 transition: "transform 0.3s cubic-bezier(.4,0,.2,1)",
-                marginTop: '0.125rem',
+                marginTop: '0.5rem',
                 color: 'var(--scroll-hint-color)',
-                opacity: 0.8,
                 textShadow: '0 1px 2px rgba(0,0,0,0.5)'
               }}
-              className="text-sm"
+              className="text-lg"
               aria-hidden
             >
               ↓
