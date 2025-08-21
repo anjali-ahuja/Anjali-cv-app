@@ -50,7 +50,7 @@ const Hero = () => {
           </span>
         </h1>
         <motion.p
-          className="text-lg md:text-xl mb-6 opacity-90"
+          className="text-base md:text-lg mb-6 opacity-90"
           initial={{ opacity: 0, y: 20 }}
           animate={controls}
           transition={{ duration: 0.6, delay: 0.2 }}
