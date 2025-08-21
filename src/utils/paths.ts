@@ -6,5 +6,8 @@ export const getAssetPath = (path: string): string => {
   // Use Next.js base path for production builds
   const basePath = process.env.NODE_ENV === 'production' ? '/Anjali-cv-app' : '';
   
-  return `${basePath}/${cleanPath}`;
+  // Add cache-busting parameter for production builds
+  const cacheBuster = process.env.NODE_ENV === 'production' ? '?v=2' : '';
+  
+  return `${basePath}/${cleanPath}${cacheBuster}`;
 }; 
