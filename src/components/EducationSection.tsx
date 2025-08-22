@@ -29,11 +29,12 @@ const EducationSection = () => {
         {/* Two Columns - Middle Row */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {/* Formal Education Section */}
-          <div className="text-left">
+          <div className="text-left flex flex-col">
             <h3 className="text-lg font-semibold mb-4"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">🎓</span> Formal Education</h3>
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
-              <h4 className="text-lg font-semibold mb-2">Bachelor of Computer Science</h4>
-              <p className="text-base mb-3">University of Melbourne — 2018 – 2020</p>
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex-1 hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+              <h4 className="text-lg font-semibold mb-2">Bachelor of Science</h4>
+              <p className="text-base mb-1">University of Melbourne</p>
+              <p className="text-sm text-gray-600 mb-3">2018 – 2020</p>
               <ul className="space-y-1 text-sm">
                 <li>• Majored in: Computing and Software Systems</li>
                 <li>• Undertook electives in Data Science, Physics and Positive Psychology</li>
@@ -44,9 +45,9 @@ const EducationSection = () => {
           </div>
 
           {/* Certifications Section */}
-          <div className="text-left">
+          <div className="text-left flex flex-col">
             <h3 className="text-lg font-semibold mb-4"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">📜</span> Certifications</h3>
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex-1 hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
               <div className="space-y-3">
                 <div>
                   <div className="flex justify-between items-center">
