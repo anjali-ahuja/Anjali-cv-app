@@ -34,32 +34,28 @@ const WorkExperienceSection = () => {
           <div className="text-left flex flex-col gap-4 lg:gap-6">
             {/* Canva - Current Company */}
             <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
-              <div className="flex justify-between items-start mb-3">
-                <div className="flex items-center gap-3 flex-1 min-w-0">
-                  <Image src={getAssetPath("/work-experience/canva_logo.jpeg")} alt="Canva logo" width={32} height={32} className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out flex-shrink-0" />
-                  <div className="min-w-0 flex-1">
-                    <h4 className="text-lg font-semibold">Canva</h4>
-                    <p className="text-base text-gray-700">Software Engineer</p>
-                  </div>
+              <div className="flex items-center gap-3 mb-2">
+                <Image src={getAssetPath("/work-experience/canva_logo.jpeg")} alt="Canva logo" width={32} height={32} className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out flex-shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <h4 className="text-lg font-semibold">Canva</h4>
+                  <p className="text-base text-gray-700">Software Engineer</p>
                 </div>
-                <span className="text-sm text-gray-600 flex-shrink-0 ml-2 text-right">July 2025 – Present</span>
               </div>
+              <div className="text-sm text-gray-600 mb-3">July 2025 – Present</div>
               <ul className="space-y-1 text-xs">
                 <li>• Ramping up to improve data warehouse experiences for teams across the company <span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">🏗️</span></li>
               </ul>
             </div>
             {/* Amazon - Previous Company */}
             <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
-              <div className="flex justify-between items-start mb-3">
-                <div className="flex items-center gap-3 flex-1 min-w-0">
-                  <Image src={getAssetPath("/work-experience/amazon_logo.jpeg")} alt="Amazon logo" width={32} height={32} className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out flex-shrink-0" />
-                  <div className="min-w-0 flex-1">
-                    <h4 className="text-lg font-semibold">Amazon</h4>
-                    <p className="text-base text-gray-700">Software Development Engineer</p>
-                  </div>
+              <div className="flex items-center gap-3 mb-2">
+                <Image src={getAssetPath("/work-experience/amazon_logo.jpeg")} alt="Amazon logo" width={32} height={32} className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out flex-shrink-0" />
+                <div className="min-w-0 flex-1">
+                  <h4 className="text-lg font-semibold">Amazon</h4>
+                  <p className="text-base text-gray-700">Software Development Engineer</p>
                 </div>
-                <span className="text-sm text-gray-600 flex-shrink-0 ml-2 text-right">August 2022 – July 2025</span>
               </div>
+              <div className="text-sm text-gray-600 mb-3">August 2022 – July 2025</div>
               <ul className="space-y-1 text-xs">
                 <li>• Contributed to the design and development of microservices within the Buy With Prime ecosystem</li>
                 <li>• Maintained and extended the control-plane service that provisions customer infrastructure</li>
@@ -74,11 +70,9 @@ const WorkExperienceSection = () => {
           {/* Right Column: EY */}
           <div className="text-left">
             <div className="bg-white/50 rounded-lg p-4 shadow-sm h-full hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
-              <div className="flex justify-between items-start mb-3">
-                <div className="flex items-center gap-3 flex-1 min-w-0">
-                  <Image src={getAssetPath("/work-experience/ernstandyoung_logo.jpeg")} alt="Ernst & Young logo" width={32} height={32} className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out flex-shrink-0" />
-                  <h4 className="text-lg font-semibold">Ernst & Young</h4>
-                </div>
+              <div className="flex items-center gap-3 mb-3">
+                <Image src={getAssetPath("/work-experience/ernstandyoung_logo.jpeg")} alt="Ernst & Young logo" width={32} height={32} className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out flex-shrink-0" />
+                <h4 className="text-lg font-semibold">Ernst & Young</h4>
               </div>
               <div className="space-y-3">
                 <div>
