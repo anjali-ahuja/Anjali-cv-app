@@ -50,29 +50,29 @@ const EducationSection = () => {
               <div className="space-y-3">
                 <div>
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-sm">AWS Certified Developer – Associate</span>
-                    <span className="text-xs text-gray-600">October 2024</span>
+                    <span className="font-semibold text-sm flex-1 min-w-0">AWS Certified Developer – Associate</span>
+                    <span className="text-xs text-gray-600 flex-shrink-0 ml-2 text-right">October 2024</span>
                   </div>
                   <p className="text-xs text-gray-600 mt-1">Amazon Web Services</p>
                 </div>
                 <div>
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-sm">Introduction to Concurrent Programming with GPUs</span>
-                    <span className="text-xs text-gray-600">April 2024</span>
+                    <span className="font-semibold text-sm flex-1 min-w-0">Introduction to Concurrent Programming with GPUs</span>
+                    <span className="text-xs text-gray-600 flex-shrink-0 ml-2 text-right">April 2024</span>
                   </div>
                   <p className="text-xs text-gray-600 mt-1">John Hopkins University</p>
                 </div>
                 <div>
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-sm">Microsoft Certified: Azure Data Scientist Associate</span>
-                    <span className="text-xs text-gray-600">January 2022</span>
+                    <span className="font-semibold text-sm flex-1 min-w-0">Microsoft Certified: Azure Data Scientist Associate</span>
+                    <span className="text-xs text-gray-600 flex-shrink-0 ml-2 text-right">January 2022</span>
                   </div>
                   <p className="text-xs text-gray-600 mt-1">Microsoft</p>
                 </div>
                 <div>
                   <div className="flex justify-between items-center">
-                    <span className="font-semibold text-sm">Neural Networks and Deep Learning</span>
-                    <span className="text-xs text-gray-600">July 2020</span>
+                    <span className="font-semibold text-sm flex-1 min-w-0">Neural Networks and Deep Learning</span>
+                    <span className="text-xs text-gray-600 flex-shrink-0 ml-2 text-right">July 2020</span>
                   </div>
                   <p className="text-xs text-gray-600 mt-1">DeepLearning.AI</p>
                 </div>
