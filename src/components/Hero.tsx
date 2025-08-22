@@ -8,13 +8,20 @@ const Hero = () => {
   // Typewriter effect state
   const headline = "Hi, I'm Anjali — a software engineer based in Australia.";
   const [displayedText, setDisplayedText] = useState("");
+  const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const controls = useAnimation();
 
   const sectionRef = useRef<HTMLElement | null>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-20% 0px -20% 0px" });
 
+  const skipAnimation = () => {
+    setDisplayedText(headline);
+    setIsAnimationComplete(true);
+    controls.start({ opacity: 1, y: 0 });
+  };
+
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || isAnimationComplete) return;
 
     let current = 0;
     const interval = setInterval(() => {
@@ -22,12 +29,13 @@ const Hero = () => {
       current++;
       if (current === headline.length) {
         clearInterval(interval);
+        setIsAnimationComplete(true);
         controls.start({ opacity: 1, y: 0 });
       }
     }, 84); // typing speed (slowed by 20%)
 
     return () => clearInterval(interval);
-  }, [headline, controls, isInView]);
+  }, [headline, controls, isInView, isAnimationComplete]);
 
   return (
     <section
@@ -40,7 +48,11 @@ const Hero = () => {
       } as React.CSSProperties}
     >
       <div className="w-full md:w-1/2 flex flex-col items-center text-center max-w-2xl">
-        <h1 className="text-4xl md:text-5xl mb-6 leading-tight hover:scale-105 transition-transform duration-300 ease-in-out cursor-pointer">
+        <h1 
+          className="text-4xl md:text-5xl mb-6 leading-tight hover:scale-105 active:scale-95 transition-transform duration-300 ease-in-out cursor-pointer select-none"
+          onClick={skipAnimation}
+          title="Click or tap to skip animation"
+        >
           <span 
             style={{ minHeight: 48, display: "inline-block", letterSpacing: "0.02em", color: "var(--lime-green)" }}
             className="hover:text-opacity-80 transition-all duration-300 ease-in-out"
