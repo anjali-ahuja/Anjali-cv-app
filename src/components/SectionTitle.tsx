@@ -25,51 +25,45 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
   useEffect(() => {
     if (hasStarted) return;
 
-    const checkIfInCenter = () => {
-      if (!innerRef.current) return;
+    const startAnimation = () => {
+      if (hasStarted) return;
       
-      const rect = innerRef.current.getBoundingClientRect();
-      const windowWidth = window.innerWidth;
-      
-      // Trigger when the element is partially visible and approaching the center
-      const isInCenter = 
-        rect.left < windowWidth * 0.9 && 
-        rect.right > windowWidth * 0.1;
-      
-      if (isInCenter && !hasStarted) {
-        setHasStarted(true);
-        let currentIndex = 0;
-        const intervalId = window.setInterval(() => {
-          setDisplayedText(text.slice(0, currentIndex + 1));
-          currentIndex += 1;
-          if (currentIndex >= text.length) {
-            window.clearInterval(intervalId);
-          }
-        }, typingIntervalMs);
+      setHasStarted(true);
+      let currentIndex = 0;
+      const intervalId = window.setInterval(() => {
+        setDisplayedText(text.slice(0, currentIndex + 1));
+        currentIndex += 1;
+        if (currentIndex >= text.length) {
+          window.clearInterval(intervalId);
+        }
+      }, typingIntervalMs);
 
-        return () => window.clearInterval(intervalId);
-      }
+      return () => window.clearInterval(intervalId);
     };
 
-    // Check immediately
-    checkIfInCenter();
-    
-    // Find the main element that handles horizontal scrolling
-    const mainElement = document.querySelector('main');
-    if (mainElement) {
-      mainElement.addEventListener('scroll', checkIfInCenter);
-    }
-    
-    // Also listen to window scroll for mobile
-    window.addEventListener('scroll', checkIfInCenter);
-    window.addEventListener('resize', checkIfInCenter);
-    
-    return () => {
-      if (mainElement) {
-        mainElement.removeEventListener('scroll', checkIfInCenter);
+    // Use Intersection Observer for better performance and reliability
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasStarted) {
+            startAnimation();
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the element is visible
+        rootMargin: '0px 0px -20% 0px' // Trigger slightly before the element is fully in view
       }
-      window.removeEventListener('scroll', checkIfInCenter);
-      window.removeEventListener('resize', checkIfInCenter);
+    );
+
+    if (innerRef.current) {
+      observer.observe(innerRef.current);
+    }
+
+    return () => {
+      if (innerRef.current) {
+        observer.unobserve(innerRef.current);
+      }
     };
   }, [text, typingIntervalMs, hasStarted]);
 
