@@ -94,6 +94,7 @@ const Hero = () => {
           alt="Anjali smiling with headphones on"
           width={400}
           height={400}
+          priority
           className="rounded-lg shadow-lg object-cover max-w-xs md:max-w-sm lg:max-w-md w-full h-64 md:h-96 hover:shadow-xl transition-all duration-300 ease-in-out"
           style={{ background: "rgba(255,255,255,0.15)" }}
         />
