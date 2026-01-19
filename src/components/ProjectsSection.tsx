@@ -73,7 +73,7 @@ const ProjectsSection = () => {
                 </div>
               </div>
               <p className="text-sm leading-snug text-[var(--primary-purple)] mb-3">
-                Developed a frog species classification model to advance biodiversity monitoring and modelling, leveraging geospatial time-series data on frogs and weather. Built in Python using xarray, pandas, NumPy, scikit-learn, and Zarr. Achieved global semifinalist ranking (#4 of 400+ teams) for which I was asked to present my solution.
+                Developed a frog species classification model to advance biodiversity monitoring and modelling, leveraging geospatial time-series data on frogs and weather. Built in Python using xarray, pandas, NumPy, scikit-learn, and Zarr. Achieved global semifinalist ranking (#4 of 400+ teams) as a solo participant for which I was asked to present my solution.
               </p>
               <a
                 href="https://www.linkedin.com/posts/anjali-manoj-ahuja_global-semi-finalist-ey-x-microsoft-2022-activity-6964729323513683968-WxbU"
