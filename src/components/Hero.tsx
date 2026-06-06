@@ -3,42 +3,16 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import Image from "next/image";
 import { getAssetPath } from "../utils/paths";
+import { playPopSound } from "../utils/sound";
 
 const Hero = () => {
   const headline = "Hi, I'm Anjali — a software engineer based in Australia.";
   const [displayedText, setDisplayedText] = useState("");
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const controls = useAnimation();
-  const audioCtxRef = useRef<AudioContext | null>(null);
 
   const sectionRef = useRef<HTMLElement | null>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-20% 0px -20% 0px" });
-
-  const playTick = () => {
-    try {
-      if (!audioCtxRef.current) {
-        audioCtxRef.current = new AudioContext();
-      }
-      const ctx = audioCtxRef.current;
-      if (ctx.state === "suspended") ctx.resume();
-
-      const oscillator = ctx.createOscillator();
-      const gain = ctx.createGain();
-      oscillator.connect(gain);
-      gain.connect(ctx.destination);
-
-      oscillator.type = "sine";
-      oscillator.frequency.setValueAtTime(1200, ctx.currentTime);
-      oscillator.frequency.exponentialRampToValueAtTime(900, ctx.currentTime + 0.025);
-      gain.gain.setValueAtTime(0.015, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.025);
-
-      oscillator.start(ctx.currentTime);
-      oscillator.stop(ctx.currentTime + 0.025);
-    } catch {
-      // audio unavailable — fail silently
-    }
-  };
 
   const skipAnimation = () => {
     setDisplayedText(headline);
@@ -55,7 +29,7 @@ const Hero = () => {
     let current = 0;
     const interval = setInterval(() => {
       setDisplayedText(headline.slice(0, current + 1));
-      playTick();
+      playPopSound();
       current++;
       if (current === headline.length) {
         clearInterval(interval);
@@ -123,6 +97,7 @@ const Hero = () => {
       </div>
       <div className="w-full md:w-1/2 flex justify-center mt-8 md:mt-0">
         <Image
+          onMouseEnter={playPopSound}
           src={getAssetPath("/hero/hero-photo.jpg")}
           alt="Anjali smiling with headphones on"
           width={400}

@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { getAssetPath } from "../utils/paths";
 import SectionTitle from "./SectionTitle";
+import { playPopSound } from "../utils/sound";
 
 const ProjectsSection = () => {
   return (
@@ -40,7 +41,7 @@ const ProjectsSection = () => {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
           {/* Amazon Accomplishments - Large Card */}
-          <div className="h-full bg-white/50 rounded-lg p-4 shadow-sm flex flex-col text-left relative hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+          <div className="h-full bg-white/50 rounded-lg p-4 shadow-sm flex flex-col text-left relative hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
             <div className="flex items-center mb-3">
               <Image src={getAssetPath("/projects/amazon_accomplishments.svg")} alt="Amazon" width={50} height={50} className="w-[3.125rem] h-[3.125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
               <div>
@@ -64,7 +65,7 @@ const ProjectsSection = () => {
           {/* Right Column: Two Smaller Cards */}
           <div className="flex flex-col gap-6">
             {/* Microsoft X EY Datathon */}
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col justify-between text-left hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col justify-between text-left hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
               <div className="flex items-center mb-3">
                 <Image src={getAssetPath("/projects/microsoft_ey_datathon.svg")} alt="Datathon" width={45} height={45} className="w-[2.8125rem] h-[2.8125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
                 <div>
@@ -86,7 +87,7 @@ const ProjectsSection = () => {
               </a>
             </div>
             {/* Date Ideas App */}
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col justify-between text-left hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col justify-between text-left hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
               <div className="flex items-center mb-3">
                 <Image src={getAssetPath("/projects/date_ideas_app.svg")} alt="Date Ideas App" width={45} height={45} className="w-[2.8125rem] h-[2.8125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
                 <div>

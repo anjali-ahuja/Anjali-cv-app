@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import SectionTitle from "./SectionTitle";
+import { playPopSound } from "../utils/sound";
 
 const EducationSection = () => {
   return (
@@ -31,7 +32,7 @@ const EducationSection = () => {
           {/* Formal Education Section */}
           <div className="text-left flex flex-col">
             <h3 className="text-lg font-semibold mb-4"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">🎓</span> Formal Education</h3>
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex-1 hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex-1 hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
               <h4 className="text-lg font-semibold mb-2">Bachelor of Science</h4>
               <p className="text-base mb-1">University of Melbourne</p>
               <p className="text-sm text-gray-600 mb-3">2018 – 2020</p>
@@ -47,7 +48,7 @@ const EducationSection = () => {
           {/* Certifications Section */}
           <div className="text-left flex flex-col">
             <h3 className="text-lg font-semibold mb-4"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">📜</span> Certifications</h3>
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex-1 hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex-1 hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
               <div className="space-y-3">
                 <div>
                   <div className="flex justify-between items-center">
@@ -88,7 +89,7 @@ const EducationSection = () => {
         {/* Ongoing Learning Section - Bottom Row */}
         <div className="text-left">
           <h3 className="text-lg font-semibold mb-4"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">📚</span> Ongoing Learning</h3>
-          <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+          <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
             <p className="text-sm leading-relaxed">
               I&apos;m currently deepening my skills in system design, machine learning, and product analytics — and outside of work, I&apos;m also working on sharpening my chess game and strategic thinking.
               If you&apos;re exploring similar topics, I&apos;d love to connect and learn together — feel free to reach out!

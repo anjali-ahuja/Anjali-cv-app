@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { getAssetPath } from "../utils/paths";
 import SectionTitle from "./SectionTitle";
+import { playPopSound } from "../utils/sound";
 
 const WorkExperienceSection = () => {
   return (
@@ -33,7 +34,7 @@ const WorkExperienceSection = () => {
           {/* Left Column: Current and Recent Companies */}
           <div className="text-left flex flex-col gap-4 lg:gap-6">
             {/* Canva - Current Company */}
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
               <div className="flex items-center gap-3 mb-2">
                 <Image src={getAssetPath("/work-experience/canva_logo.jpeg")} alt="Canva logo" width={32} height={32} className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out flex-shrink-0" />
                 <div className="min-w-0 flex-1">
@@ -47,7 +48,7 @@ const WorkExperienceSection = () => {
               </ul>
             </div>
             {/* Amazon - Previous Company */}
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
               <div className="flex items-center gap-3 mb-2">
                 <Image src={getAssetPath("/work-experience/amazon_logo.jpeg")} alt="Amazon logo" width={32} height={32} className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out flex-shrink-0" />
                 <div className="min-w-0 flex-1">
@@ -69,7 +70,7 @@ const WorkExperienceSection = () => {
 
           {/* Right Column: EY */}
           <div className="text-left">
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm h-full hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm h-full hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
               <div className="flex items-center gap-3 mb-3">
                 <Image src={getAssetPath("/work-experience/ernstandyoung_logo.jpeg")} alt="Ernst & Young logo" width={32} height={32} className="w-8 h-8 rounded hover:scale-110 transition-transform duration-300 ease-in-out flex-shrink-0" />
                 <h4 className="text-lg font-semibold">Ernst & Young</h4>
@@ -105,7 +106,7 @@ const WorkExperienceSection = () => {
         {/* Key Skills Section - Bottom Row */}
         <div className="text-left">
           <h3 className="text-lg font-semibold mb-4"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">🛠️</span> Key Skills & Technologies</h3>
-          <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out">
+          <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
             <p className="text-sm leading-relaxed mb-3">
               I&apos;m a full-stack software engineer with a focus on building clean, scalable systems — from front-end interfaces to backend services and data platforms. I work fluently with React, TypeScript, Python, Java, Kotlin, and AWS, and have contributed to high-impact projects in both product and consulting environments.
 
