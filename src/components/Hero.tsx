@@ -23,6 +23,9 @@ const Hero = () => {
   useEffect(() => {
     if (!isInView || isAnimationComplete) return;
 
+    const handleClick = () => skipAnimation();
+    document.addEventListener("click", handleClick);
+
     let current = 0;
     const interval = setInterval(() => {
       setDisplayedText(headline.slice(0, current + 1));
@@ -32,9 +35,12 @@ const Hero = () => {
         setIsAnimationComplete(true);
         controls.start({ opacity: 1, y: 0 });
       }
-    }, 84); // typing speed (slowed by 20%)
+    }, 84);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener("click", handleClick);
+    };
   }, [headline, controls, isInView, isAnimationComplete]);
 
   return (
@@ -94,7 +100,6 @@ const Hero = () => {
           alt="Anjali smiling with headphones on"
           width={400}
           height={400}
-          priority
           className="rounded-lg shadow-lg object-cover max-w-xs md:max-w-sm lg:max-w-md w-full h-64 md:h-96 hover:shadow-xl transition-all duration-300 ease-in-out"
           style={{ background: "rgba(255,255,255,0.15)" }}
         />
