@@ -29,7 +29,7 @@ const WorkExperienceSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left items-stretch">
           {/* Timeline: roles in reverse-chronological order */}
           <div className="lg:col-span-2 relative pl-14">
             {/* Vertical rail */}
@@ -114,7 +114,7 @@ const WorkExperienceSection = () => {
 
           {/* Key Skills - companion column */}
           <div className="lg:col-span-1">
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out lg:sticky lg:top-6" onMouseEnter={playPopSound}>
+            <div className="bg-white/50 rounded-lg p-4 shadow-sm hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out h-full flex flex-col" onMouseEnter={playPopSound}>
               <h3 className="text-base font-semibold mb-3"><span className="inline-block hover:scale-125 transition-transform duration-300 ease-in-out">🛠️</span> Key Skills &amp; Technologies</h3>
               <p className="text-xs leading-relaxed mb-3">
                 I&apos;m a full-stack software engineer focused on building clean, scalable systems — from front-end interfaces to backend services and data platforms, across both product and consulting environments.
@@ -123,7 +123,7 @@ const WorkExperienceSection = () => {
                 I&apos;m drawn to elegant abstractions, clear architecture, and tools that make life better for users and developers alike — and I bring the same care to collaboration, whether leading planning, pairing with engineers, or aligning with stakeholders.
               </p>
 
-              <div className="space-y-3 mb-4">
+              <div className="space-y-3 mb-4 flex-1">
                 {[
                   { label: "Languages", items: ["Python", "Java", "Kotlin", "TypeScript", "C"] },
                   { label: "Frontend", items: ["React", "Next.js", "Tailwind"] },
