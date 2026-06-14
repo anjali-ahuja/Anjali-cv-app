@@ -1,6 +1,11 @@
 let audioCtx: AudioContext | null = null;
+let muted = false;
+
+export const isMuted = () => muted;
+export const setMuted = (val: boolean) => { muted = val; };
 
 export const playPopSound = () => {
+  if (muted) return;
   try {
     if (!audioCtx) audioCtx = new AudioContext();
     if (audioCtx.state === "suspended") audioCtx.resume();

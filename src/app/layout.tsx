@@ -3,7 +3,7 @@ import "./globals.css";
 import ScrollHint from "../components/ScrollHint";
 import CursorTrail from "../components/CursorTrail";
 import FloatingSparkles from "../components/FloatingSparkles";
-import ImagePreload from "../components/ImagePreload";
+import MuteButton from "../components/MuteButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,7 +24,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <ImagePreload />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white`}
@@ -35,6 +34,8 @@ export default function RootLayout({
         <FloatingSparkles />
         {/* Cursor trail effect */}
         <CursorTrail />
+        {/* Mute/unmute sound toggle */}
+        <MuteButton />
         {/* Mobile: vertical scroll layout */}
         <main className="md:hidden flex flex-col w-full">
           {children}
