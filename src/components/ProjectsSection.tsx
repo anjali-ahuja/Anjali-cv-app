@@ -1,9 +1,38 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import { getAssetPath } from "../utils/paths";
 import SectionTitle from "./SectionTitle";
 import { playPopSound } from "../utils/sound";
+
+type Status = "live" | "wip" | "achievement";
+
+const statusStyles: Record<Status, { label: string; className: string }> = {
+  live: { label: "● Live", className: "bg-[#1D9E75]/20 text-[#0F6E56]" },
+  wip: { label: "◐ In progress", className: "bg-[#EF9F27]/25 text-[#854F0B]" },
+  achievement: { label: "★ Achievement", className: "bg-[var(--primary-purple)]/15 text-[var(--primary-purple)]" },
+};
+
+const Chip = ({ label }: { label: string }) => (
+  <span className="bg-[var(--primary-purple)]/10 text-[var(--primary-purple)] text-[0.7rem] px-2 py-0.5 rounded-full hover:bg-[var(--primary-purple)]/20 hover:scale-105 transition-all duration-200 ease-in-out">
+    {label}
+  </span>
+);
+
+const StatusBadge = ({ status }: { status: Status }) => (
+  <span className={`text-[0.65rem] px-2 py-0.5 rounded-full whitespace-nowrap ${statusStyles[status].className}`}>
+    {statusStyles[status].label}
+  </span>
+);
+
+const ProjectLink = ({ href, icon, label }: { href: string; icon: string; label: string }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[var(--primary-purple)] text-[0.7rem] font-semibold hover:text-purple-900 transition-colors"
+  >
+    {icon} {label}
+  </a>
+);
 
 const ProjectsSection = () => {
   return (
@@ -15,99 +44,119 @@ const ProjectsSection = () => {
         ['--scroll-hint-color']: "var(--primary-purple)",
       } as React.CSSProperties}
     >
-      <div className="text-center max-w-6xl px-8 py-6 h-full flex flex-col justify-center w-full">
-        <SectionTitle 
-          text="Projects" 
-          as="h2" 
-          className="text-2xl font-semibold mb-6 hover:scale-105 transition-transform duration-300 ease-in-out" 
+      <div className="text-center max-w-6xl w-full px-8 py-6 h-full flex flex-col justify-center">
+        <SectionTitle
+          text="Projects"
+          as="h2"
+          className="text-2xl font-semibold mb-3 hover:scale-105 transition-transform duration-300 ease-in-out"
         />
-        <div className="mb-8 space-y-4">
-          <p className="text-base md:text-lg leading-relaxed">
-            Most of my engineering journey so far has been shaped by my work at <span className="font-semibold">Amazon</span> and <span className="font-semibold">Canva</span>, so I haven&apos;t always had the time to build many side projects. I&apos;m looking to change that. This space will grow with more experiments, creative builds, and collaborations.
-          </p>
-          <p className="text-base md:text-lg leading-relaxed">
-            If you&apos;re interested in collaborating on something data-driven, design-focused, or just an idea worth exploring, I&apos;d love to hear from you on{' '}
-            <a
-              href="https://www.linkedin.com/in/anjali-manoj-ahuja/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline font-semibold hover:text-[var(--primary-purple)] transition-colors"
-            >
-              LinkedIn
-            </a>
-            .
-          </p>
-        </div>
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-          {/* Amazon Accomplishments - Large Card */}
-          <div className="h-full bg-white/50 rounded-lg p-4 shadow-sm flex flex-col text-left relative hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
-            <div className="flex items-center mb-3">
-              <Image src={getAssetPath("/projects/amazon_accomplishments.svg")} alt="Amazon" width={50} height={50} className="w-[3.125rem] h-[3.125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
-              <div>
-                <h3 className="text-lg font-semibold text-[var(--primary-purple)]">Accomplishments at Amazon</h3>
-                <span className="text-xs text-[var(--primary-purple)]">Aug 2022 – Jul 2025</span>
+        <p className="text-sm md:text-base leading-relaxed max-w-3xl mx-auto mb-6">
+          Most of my engineering has been at <span className="font-semibold">Amazon</span> and <span className="font-semibold">Canva</span>, so side projects have been fewer — but I&apos;ve been changing that. A few recent builds below, and I&apos;d love to collaborate on something data-driven, design-focused, or just an idea worth exploring on{' '}
+          <a
+            href="https://www.linkedin.com/in/anjali-manoj-ahuja/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-semibold hover:text-purple-900 transition-colors"
+          >
+            LinkedIn
+          </a>.
+        </p>
+
+        {/* Featured project */}
+        <div
+          className="bg-white/50 rounded-lg p-4 shadow-sm text-left mb-4 hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out"
+          onMouseEnter={playPopSound}
+        >
+          <div className="flex items-center gap-3 mb-2">
+            <div className="w-10 h-10 rounded-full bg-[var(--primary-purple)] text-white flex items-center justify-center text-xl flex-shrink-0 hover:scale-110 transition-transform duration-300 ease-in-out">📈</div>
+            <div className="min-w-0 flex-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <h3 className="text-base font-semibold text-[var(--primary-purple)]">Paper Trading App</h3>
+                <StatusBadge status="live" />
               </div>
             </div>
-            <ul className="list-disc pl-5 marker:text-base space-y-1 text-sm leading-snug text-[var(--primary-purple)]">
-              <li>Reduced canary testing costs for a control plane service by 80% through targeted improvements to test templates.</li>
-              <li>
-                Delivered multiple features for the Buy with Prime ecosystem, including:
-                <ul className="mt-1 pl-[2.592rem] list-disc marker:text-xs space-y-1 text-sm leading-snug">
-                  <li>Shopify integration enhancements such as return synchronisation and virtual bundles support</li>
-                  <li>Frontends for Multi-Channel Fulfillment and Buy with Prime apps</li>
-                  <li>Control plane provisioning logic for Salesforce Commerce Cloud integration, including sandbox capabilities</li>
-                </ul>
-              </li>
-              <li>Designed and implemented event-driven automation for account suspensions and closures, eliminating the need for manual operational tickets.</li>
-            </ul>
           </div>
-          {/* Right Column: Two Smaller Cards */}
-          <div className="flex flex-col gap-6">
-            {/* Microsoft X EY Datathon */}
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col justify-between text-left hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
-              <div className="flex items-center mb-3">
-                <Image src={getAssetPath("/projects/microsoft_ey_datathon.svg")} alt="Datathon" width={45} height={45} className="w-[2.8125rem] h-[2.8125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
-                <div>
-                  <h3 className="text-lg font-semibold text-[var(--primary-purple)]">Global Semifinalist: Microsoft X EY Datathon</h3>
-                  <span className="text-xs text-[var(--primary-purple)]">May 2022 - June 2022</span>
-                </div>
+          <p className="text-xs leading-snug mb-2.5">
+            Simulate stock &amp; crypto trades with live market prices — FIFO cost-basis P&amp;L, event-sourced trade history, and a clean domain core behind a FastAPI + Streamlit stack.
+          </p>
+          <div className="flex flex-wrap gap-1.5 mb-2.5">
+            {["Python", "FastAPI", "SQLModel", "event sourcing", "Streamlit"].map((t) => <Chip key={t} label={t} />)}
+          </div>
+          <ProjectLink href="https://github.com/anjali-ahuja/paper-trading-app" icon="🔗" label="View on GitHub" />
+        </div>
+
+        {/* Other projects */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+          {/* Chess Dashboard */}
+          <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-9 h-9 rounded-full bg-[var(--primary-purple)] text-white flex items-center justify-center text-lg flex-shrink-0 hover:scale-110 transition-transform duration-300 ease-in-out">♟️</div>
+              <div className="flex flex-wrap items-center gap-2 min-w-0">
+                <h3 className="text-sm font-semibold text-[var(--primary-purple)]">Chess Dashboard</h3>
+                <StatusBadge status="wip" />
               </div>
-              <p className="text-sm leading-snug text-[var(--primary-purple)] mb-3">
-                Developed a frog species classification model to advance biodiversity monitoring and modelling, leveraging geospatial time-series data on frogs and weather. Built in Python using xarray, pandas, NumPy, scikit-learn, and Zarr. Achieved global semifinalist ranking (#4 of 400+ teams) as a solo participant for which I was asked to present my solution.
-              </p>
-              <a
-                href="https://www.linkedin.com/posts/anjali-manoj-ahuja_global-semi-finalist-ey-x-microsoft-2022-activity-6964729323513683968-WxbU"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline font-semibold transition-colors text-xs"
-                style={{ color: "var(--primary-purple)" }}
-              >
-                Read more
-              </a>
             </div>
-            {/* Date Ideas App */}
-            <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col justify-between text-left hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
-              <div className="flex items-center mb-3">
-                <Image src={getAssetPath("/projects/date_ideas_app.svg")} alt="Date Ideas App" width={45} height={45} className="w-[2.8125rem] h-[2.8125rem] mr-3 rounded hover:scale-110 transition-transform duration-300 ease-in-out" />
-                <div>
-                  <h3 className="text-lg font-semibold text-[var(--primary-purple)]">Date Ideas App</h3>
-                  <span className="text-xs text-[var(--primary-purple)]">Feb 2022</span>
-                </div>
+            <p className="text-xs leading-snug mb-2.5 flex-1">
+              Weekly Stockfish analysis of my Chess.com games with deterministic, cached evaluations and a Streamlit dashboard.
+            </p>
+            <div className="flex flex-wrap gap-1.5 mb-2.5">
+              {["Python", "Stockfish", "Streamlit"].map((t) => <Chip key={t} label={t} />)}
+            </div>
+            <ProjectLink href="https://github.com/anjali-ahuja/chess-dashboard" icon="🔗" label="GitHub" />
+          </div>
+
+          {/* Meme Mirror */}
+          <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-9 h-9 rounded-full bg-[var(--primary-purple)] text-white flex items-center justify-center text-lg flex-shrink-0 hover:scale-110 transition-transform duration-300 ease-in-out">🐵</div>
+              <div className="flex flex-wrap items-center gap-2 min-w-0">
+                <h3 className="text-sm font-semibold text-[var(--primary-purple)]">Meme Mirror</h3>
+                <StatusBadge status="live" />
               </div>
-              <p className="text-sm leading-snug text-[var(--primary-purple)] mb-3">
-                A playful web app to generate creative date ideas, built with React. Predates the AI boom. Designed for fun and inspiration.
-              </p>
-              <a
-                href="https://anjali-ahuja.github.io/date-ideas-app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline font-semibold transition-colors text-xs"
-                style={{ color: "var(--primary-purple)" }}
-              >
-                View on GitHub
-              </a>
             </div>
+            <p className="text-xs leading-snug mb-2.5 flex-1">
+              A webcam app that reads your pose and expression, then mirrors back a matching animal meme in real time.
+            </p>
+            <div className="flex flex-wrap gap-1.5 mb-2.5">
+              {["Python", "OpenCV", "MediaPipe"].map((t) => <Chip key={t} label={t} />)}
+            </div>
+            <ProjectLink href="https://github.com/anjali-ahuja/meme-mirror" icon="🔗" label="GitHub" />
+          </div>
+
+          {/* Date Ideas App */}
+          <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-9 h-9 rounded-full bg-[var(--primary-purple)] text-white flex items-center justify-center text-lg flex-shrink-0 hover:scale-110 transition-transform duration-300 ease-in-out">💝</div>
+              <div className="flex flex-wrap items-center gap-2 min-w-0">
+                <h3 className="text-sm font-semibold text-[var(--primary-purple)]">Date Ideas App</h3>
+                <StatusBadge status="live" />
+              </div>
+            </div>
+            <p className="text-xs leading-snug mb-2.5 flex-1">
+              A playful generator for creative date ideas, built with React. Predates the AI boom — designed for fun and inspiration.
+            </p>
+            <div className="flex flex-wrap gap-1.5 mb-2.5">
+              {["React"].map((t) => <Chip key={t} label={t} />)}
+            </div>
+            <ProjectLink href="https://anjali-ahuja.github.io/date-ideas-app/" icon="🔗" label="Live demo" />
+          </div>
+
+          {/* Datathon Achievement */}
+          <div className="bg-white/50 rounded-lg p-4 shadow-sm flex flex-col hover:bg-white/70 hover:shadow-lg transition-all duration-300 ease-in-out" onMouseEnter={playPopSound}>
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-9 h-9 rounded-full bg-[var(--primary-purple)] text-white flex items-center justify-center text-lg flex-shrink-0 hover:scale-110 transition-transform duration-300 ease-in-out">🏆</div>
+              <div className="flex flex-wrap items-center gap-2 min-w-0">
+                <h3 className="text-sm font-semibold text-[var(--primary-purple)]">Microsoft × EY Datathon</h3>
+                <StatusBadge status="achievement" />
+              </div>
+            </div>
+            <p className="text-xs leading-snug mb-2.5 flex-1">
+              Global semifinalist (#4 of 400+, solo) — a frog-species classification model for biodiversity monitoring using geospatial time-series data.
+            </p>
+            <div className="flex flex-wrap gap-1.5 mb-2.5">
+              {["Python", "scikit-learn", "geospatial"].map((t) => <Chip key={t} label={t} />)}
+            </div>
+            <ProjectLink href="https://www.linkedin.com/posts/anjali-manoj-ahuja_global-semi-finalist-ey-x-microsoft-2022-activity-6964729323513683968-WxbU" icon="🔗" label="Read more" />
           </div>
         </div>
       </div>
@@ -115,4 +164,4 @@ const ProjectsSection = () => {
   );
 };
 
-export default ProjectsSection; 
+export default ProjectsSection;
